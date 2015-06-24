@@ -1,0 +1,1 @@
+Programs related to data review for the "CSET" field project, July-August 2015, supported by the NSF/NCAR GV research aircraft. Notable is 'Review' that is intended to help with review of data during the field project.
