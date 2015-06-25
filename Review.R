@@ -153,6 +153,7 @@ source ("./PlotFunctions/SpeedRunSearch.R")
 source ("./PlotFunctions/CircleSearch.R")
 source ("./PlotFunctions/PitchSearch.R")
 source ("./PlotFunctions/YawSearch.R")
+source ("./PlotFunctions/ReverseHeadingSearch.R")
 
 ## ----fig-captions--------------------------------------------------------
 
@@ -219,6 +220,7 @@ PitchSearch (DataV)
 YawSearch (DataV)
 SpeedRunSearch (DataV)
 CircleSearch (DataV)
+ReverseHeadingSearch (DataV)
 
 if (SavePlotsToFiles) {
   dev.off()
