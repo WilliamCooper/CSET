@@ -2,11 +2,12 @@ PitchSearch <- function (data) {
   ## needs PITCH, GGALT
   valid <- (!is.na(data$Time)) & (!is.na(data$PITCH))
   valid[is.na (data$GGALT)] <- FALSE
+  valid[data$TASX < 150] <- FALSE
   DataT <- data[valid, ]
   ## look for high 5-min pitch variance
   del <- 300	# calculate variance over 5 min (typical pitch maneuver)
   Ptest <- 10
-  delz <- 30
+  delz <- 50
   L <- dim(DataT)[1]
   r <- 1:L
   cb <- vector ("numeric", del)

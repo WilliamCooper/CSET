@@ -2,10 +2,10 @@ YawSearch <- function (data) {
   ## needs SSRD
   valid <- (!is.na(data$Time)) & (!is.na(data$SSRD))
   DataT <- data[valid, ]
-  ## look for high 5-min sideslip variance
-  del <- 300	# calculate variance over 5 min (typical yaw maneuver)
-  Stest <- 4
-  delz <- 30
+  ## look for high 3-min sideslip variance
+  del <- 180	# calculate variance over 3 min (typical yaw maneuver)
+  Stest <- 0.4
+  delz <- 50
   L <- dim(DataT)[1]
   r <- 1:L
   cb <- vector ("numeric", del)
