@@ -14,4 +14,5 @@ RPlot6 <- function (data) {
           col=c('red', 'red'))
   title (sprintf ("mean difference PSFC-PS_A: %.1f", 
                   mean (data$PSFC-data$PS_A, na.rm=TRUE)), cex.main=0.75)
+  AddFooter ()
 }

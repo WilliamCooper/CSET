@@ -7,5 +7,6 @@ RPlotn <- function(data) {
   op <- par (mfrow=c(1,1), mar=c(5,5,2,2)+0.1)
   ## simplest plot:
   plotWAC (data[, c("Time", "Var1", "Var2")])
+  AddFooter ()
 }
 

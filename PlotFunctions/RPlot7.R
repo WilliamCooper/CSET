@@ -24,6 +24,7 @@ RPlot7 <- function (data) {
                          "dashed red: +/- 2 hPa [diff]"), cex=0.75)
   title (sprintf ("mean difference QCFC-QC_A=%.1f",
                   mean (data$QCFC-data$QC_A, na.rm=TRUE)), cex.main=0.75)
+  AddFooter ()
   # add TAS and MACH plots:
   op <- par (mar=c(2,4,1,1)+0.1)
   plotWAC (data[, c("Time", "TASF", "TASR", "TAS_A", "TASHC")], 
@@ -37,4 +38,5 @@ RPlot7 <- function (data) {
   plotWAC (data[, c("Time", "MACHF", "MACHR", "MACH_A")], 
            col=c('blue', 'darkorange', 'darkgreen'), ylab='MACHy', 
            legend.position='bottom')
+  AddFooter ()
 }

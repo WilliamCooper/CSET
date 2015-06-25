@@ -13,4 +13,5 @@ RPlot8 <- function (data) {
   title (sprintf ("mean difference: %.1f", 
                   mean (DF$PtotF-DF$PtotAvionics, na.rm=TRUE)), cex.main=0.75)
   hline (0.2); hline (-0.2)
+  AddFooter ()
 }
