@@ -1,9 +1,14 @@
 ### Plot 12: IRU comparisons
 RPlot12 <- function (data) {
   ## needs PITCH, ROLL, THDG, PITCH_IRS2, ROLL_IRS2, THDG_IRS2
+  ## apply project-dependent offsets:
+  pitch_offset <- 0.15
+  roll_offset <- -0.17
+  thdg_offset <- -0.54
   layout(matrix(1:3, ncol = 1), widths = 1, heights = c(5,5,6))
   op <- par (mar=c(2,4,1,2)+0.1,oma=c(1.1,0,0,0))
   DF <- data[, c("Time", "PITCH", "PITCH_IRS2")]
+  DF$PITCH_IRS2 <- DF$PITCH_IRS2 - pitch_offset
   DF$DifferenceX50 <- (DF$PITCH - DF$PITCH_IRS2) * 50
   line.colors=c('blue', 'darkorange', 'red', 'skyblue')
   line.types <- c(1, 9, 1, 2)
@@ -13,10 +18,11 @@ RPlot12 <- function (data) {
   hline (-2.5, 'red'); hline (2.5, 'red')
   legend("bottomleft", legend="dashed lines: +/- 0.05 deg Difference",
          box.col='red', text.col='red', cex=0.5)
-  title( sprintf ("mean difference: %.2f +/- %.2f", 
-                  mean (data$PITCH-data$PITCH_IRS2, na.rm=TRUE),
-                  sd   (data$PITCH-data$PITCH_IRS2, na.rm=TRUE)))
+  title( sprintf ("mean difference: %.2f +/- %.2f after offset %.2f", 
+                  mean (data$PITCH-DF$PITCH_IRS2, na.rm=TRUE),
+                  sd   (data$PITCH-DF$PITCH_IRS2, na.rm=TRUE), pitch_offset))
   DF <- data[, c("Time", "ROLL", "ROLL_IRS2")]
+  DF$ROLL_IRS2 <- DF$ROLL_IRS2 - roll_offset
   DF$DifferenceX50 <- (DF$ROLL - DF$ROLL_IRS2) * 50
   line.colors=c('blue', 'darkorange', 'red', 'skyblue')
   line.types <- c(1, 9, 1, 2)
@@ -26,11 +32,14 @@ RPlot12 <- function (data) {
   hline (-2.5, 'red'); hline (2.5, 'red')
   legend("bottomleft", legend="dashed lines: +/- 0.05 deg Difference",
          box.col='red', text.col='red', cex=0.5)
-  title( sprintf ("mean difference: %.2f sd %.2f", 
-                  mean (data$ROLL-data$ROLL_IRS2, na.rm=TRUE),
-                  sd   (data$ROLL-data$ROLL_IRS2, na.rm=TRUE)))
+  title( sprintf ("mean difference: %.2f sd %.2f after offset %.2f", 
+                  mean (data$ROLL-DF$ROLL_IRS2, na.rm=TRUE),
+                  sd   (data$ROLL-DF$ROLL_IRS2, na.rm=TRUE), roll_offset))
   op <- par (mar=c(5,4,1,2)+0.1)
   DF <- data[, c("Time", "THDG", "THDG_IRS2")]
+  DF$THDG_IRS2 <- DF$THDG_IRS2 - thdg_offset
+  DF$THDG_IRS2[DF$THDG-DF$THDG_IRS2 > 180] <- DF$THDG_IRS2[DF$THDG-DF$THDG_IRS2 > 180] + 360
+  DF$THDG_IRS2[DF$THDG-DF$THDG_IRS2 < -180] <- DF$THDG_IRS2[DF$THDG-DF$THDG_IRS2 < -180] - 360
   DF$DifferenceX500 <- (DF$THDG - DF$THDG_IRS2) * 500 + 180
   line.colors=c('blue', 'darkorange', 'red', 'skyblue')
   line.types <- c(1, 9, 1, 2)
@@ -43,8 +52,9 @@ RPlot12 <- function (data) {
   hline (270, 'lightblue'); hline (360, 'lightblue'); hline (0, 'lightblue')
   legend("bottomleft", legend="dashed lines: +/- 0.05 deg Difference, wrt 180 deg",
          box.col='red', text.col='red', cex=0.5)
-  #title( sprintf ("mean difference: %.2f", 
-  #mean (data$THDG-data$THDG_IRS2, na.rm=TRUE)))
+  title( sprintf ("mean difference, THDG-THDG_IRS2: %.2f sd: %.2f after offset %.2f (but beware wrap-around)", 
+         mean (data$THDG-DF$THDG_IRS2, na.rm=TRUE),
+         sd    (data$THDG-DF$THDG_IRS2, na.rm=TRUE), thdg_offset))
   AddFooter ()
 }
 

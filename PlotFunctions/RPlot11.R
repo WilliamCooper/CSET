@@ -8,7 +8,7 @@ RPlot11 <- function (data) {
   plotWAC (DF, lwd=c(2,1,1), lty=c(1,2,1), ylab=expression (paste ("AKRD [",degree,"]")))
   title (sprintf ("mean diff AKRD-AOAREF = %.02f", 
                   mean (DF$AKRD-DF$AOAREF, na.rm=TRUE)), cex.main=0.75)
-  hline (1); hline (3)
+  hline (2); hline (4)
   op <- par (mar=c(5,4,1,1)+0.1)
   DF <- data[, c("Time", "SSRD")]
   u <- -1. * data$WSC * sin (data$WDC*pi/180)

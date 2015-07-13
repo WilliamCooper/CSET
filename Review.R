@@ -93,7 +93,9 @@ Data <- getNetCDF (fname, VarList)
 
 # data: select only points where TASX > 130, and optionally limit time range
 DataV <- Data[setRange(Data$Time, StartTime, EndTime), ]
-DataV <- DataV[(!is.na (DataV$TASX)) & (DataV$TASX > 130), ]
+DataV <- DataV[(!is.na (DataV$TASX)) & (DataV$TASX > 110), ]
+## omit points where the Time is NA
+# DataV <- DataV[!is.na(DataV$Time), ]
 
 #--------------------------------------------------------------------
 # functions used later:

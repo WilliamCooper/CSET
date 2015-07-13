@@ -1,0 +1,3955 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\input colordvi
+\usepackage{color}
+\fancyhead{}
+\fancyfoot[CE,CO]{}
+\newtoks{\addressee} \global\addressee={}
+\newdimen\longindent \longindent=3.5truein
+\fancyhead[L]{Memo to: \the\addressee \\ \datetoday \\ Page \thepage \hfill}
+\renewcommand{\headrulewidth}{0.0pt}
+\newenvironment{lyxlist}[1]
+{\begin{list}{}
+{\settowidth{\labelwidth}{#1}
+\setlength{\leftmargin}{\labelwidth}
+\addtolength{\leftmargin}{\labelsep}
+\renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
+\newcommand{\datetoday}{\number\day\space
+     \ifcase\month\or January\or February\or March\or April\or May\or
+     June\or July\or August\or September\or October\or November\or
+     December\fi
+     \space\number\year}
+\newcommand{\EOLmemo}{\null \vskip-1.5truein
+{\raggedright \textsf{\textsc{\large \textcolor{blue}{Earth Observing Laboratory}}}}\par
+{\raggedright \textsf{\textsl{\textcolor{blue}{Memorandum:}}}} \par \vskip6pt
+{\color{blue}{\hrule}}\par
+\vskip0.3truein \leftline{\hskip \longindent \datetoday} \vskip0.2truein
+\thispagestyle{empty}}
+\newcommand{\attachm}[1]{\begin{lyxlist}{Attachments:00}
+\item [Attachments:] {#1}
+\end{lyxlist}}
+\newcommand{\cc}[1]{\begin{lyxlist}{Attachments:00}
+\item [cc:] {#1}
+\end{lyxlist}}
+\newcommand{\attach}[1]{\begin{lyxlist}{Attachments:00}
+\item [Attachment:] {#1}
+\end{lyxlist}}
+%usage: \encl{A\\B\\C} or \cc{ma,e1\\name2\\name3}
+\end_preamble
+\use_default_options false
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 3.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\headheight 1cm
+\headsep 2cm
+\footskip 0.5cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+EOLmemo 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+global
+\backslash
+addressee={CSET data-processing file}  % >>change "File" to the "To:" name
+ desired
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+To:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+the
+\backslash
+addressee
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+From:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Al Cooper
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+Subject:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data review: Using the 'Review.R' program
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+General description
+\end_layout
+
+\begin_layout Standard
+This is an update of the general description, adapted for CSET and using
+ CSET research flight 3 as an example for discussion of the plots.
+ This program (~cooperw/RStudio/CSET/Review.R, also available at 
+\begin_inset CommandInset href
+LatexCommand href
+name "this github URL"
+target "https://github.com/WilliamCooper/CSET.git"
+
+\end_inset
+
+) uses a set of functions to make plots that are designed to provide a starting
+ point for quality assessment.
+ This structure makes it easy to change the set of plots for a particular
+ project, to refine the time range for plots, to re-generate a subset of
+ the plots, to add new plots, and otherwise to tailor the output to project
+ and personal needs.
+ This memo shows typical output from the program, suggests how each plot
+ should look and how to spot problems, and provides a record of how output
+ should look when systems are functioning properly
+\end_layout
+
+\begin_layout Standard
+The program can be used in different ways.
+ The simplest is to source("Review.R") from an R console, including the console
+ in RStudio.
+ The program asks for a project and flight, uses a standard set of plots
+ or allows a user to change that set interactively, and then produces a
+ PDF file that is a concatenation of the plots produced.
+ PNG files could also be produced and would provide a much smaller output
+ size, but PDFs have the advantage of maintaining quality when magnified
+ (and are also easier to concatenate) so that has been selected even though
+ that format produces large files (of typical size 10 MB).
+\end_layout
+
+\begin_layout Standard
+Other ways to use the Review.R script and routines include:
+\end_layout
+
+\begin_layout Enumerate
+After running the script, the individual plot functions are available and
+ the assignment of plots to the PDF file has been cancelled, so you can
+ re-generate any selected plots for console or RStudio display, optionally
+ with variable or time-segment modifications.
+\end_layout
+
+\begin_layout Enumerate
+'Review.R' can be incorporated into an Rnw document where comments can be
+ added to provide a record of problems identified or needing further study,
+ and this might be useful documentation to preserve and distribute.
+ This document is an example of that use.
+\end_layout
+
+\begin_layout Enumerate
+It may be useful to make the plot functions in this routine available as
+ a package so they can be used easily without needing the full structure
+ of 'Review.R'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<initialization,echo=FALSE,include=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(knitr)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ncdf4)
+\end_layout
+
+\begin_layout Plain Layout
+
+opts_chunk$set(echo=FALSE, include=TRUE, fig.lp="fig:")
+\end_layout
+
+\begin_layout Plain Layout
+
+opts_chunk$set(fig.width=5.5, fig.height=5.5, fig.align="center", 
+\end_layout
+
+\begin_layout Plain Layout
+
+               digits=4, fig.show="asis", fig.path="Figures/CSET-")
+\end_layout
+
+\begin_layout Plain Layout
+
+thisFileName <- "Review"
+\end_layout
+
+\begin_layout Plain Layout
+
+require(Ranadu, quietly = TRUE, warn.conflicts=FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+require(maps, quietly=TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+require(mapdata, quietly=TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+require(mapproj, quietly=TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+require(ggplot2)
+\end_layout
+
+\begin_layout Plain Layout
+
+require(grid)
+\end_layout
+
+\begin_layout Plain Layout
+
+require(ggthemes)
+\end_layout
+
+\begin_layout Plain Layout
+
+Project <- sub (".*/", "", getwd())
+\end_layout
+
+\begin_layout Plain Layout
+
+setwd (sprintf ("~/RStudio/%s", Project))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+## if command arguments are supplied, via 'Rscript Review.R "rf01" "-1" then
+\end_layout
+
+\begin_layout Plain Layout
+
+## these will over-ride the interactive commands below.
+ Arguments are all strings:
+\end_layout
+
+\begin_layout Plain Layout
+
+##  1 Flight (string, e.g., "rf01")
+\end_layout
+
+\begin_layout Plain Layout
+
+##  2 plots desired.
+ Project-default is "-1".
+ Can also use "1,3,5" or "1:9,13"
+\end_layout
+
+\begin_layout Plain Layout
+
+##  3 ShowPlots: 3rd argument 0 suppresses saving; any other entry saves
+ them
+\end_layout
+
+\begin_layout Plain Layout
+
+##  4 Start time for the plots, in HHMMSS format.
+ If >240000, use e.g.
+ 250000 for 10000
+\end_layout
+
+\begin_layout Plain Layout
+
+##  5 End time for plots, HHMMSS format, as for Start time
+\end_layout
+
+\begin_layout Plain Layout
+
+## For example, 'Rscript Review.R rf03 17 0 220000 230000' displays plot
+ 17 for
+\end_layout
+
+\begin_layout Plain Layout
+
+## the listed times on an Xwindows screen.
+\end_layout
+
+\begin_layout Plain Layout
+
+##  Possible way to include this in a batch script?
+\end_layout
+
+\begin_layout Plain Layout
+
+##  cd ~/RStudio/WINTER; Rscript Review.R rf01 -1
+\end_layout
+
+\begin_layout Plain Layout
+
+run.args <- commandArgs (TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<configuration, include=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SavePlotsToFiles <- 0 # if != 0 plots are saved to a file
+\end_layout
+
+\begin_layout Plain Layout
+
+nps <- 30 
+\end_layout
+
+\begin_layout Plain Layout
+
+Flight <- "rf03"
+\end_layout
+
+\begin_layout Plain Layout
+
+Project <- "CSET"
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sprintf("Project is %s", Project))
+\end_layout
+
+\begin_layout Plain Layout
+
+print(sprintf("Flight is %s", Flight))
+\end_layout
+
+\begin_layout Plain Layout
+
+nplots=c(1, 3:17, 19:nps,30)    # project default
+\end_layout
+
+\begin_layout Plain Layout
+
+StartTime <- 0; EndTime <- 0 ## can set start and end times for plot
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Running the program
+\end_layout
+
+\begin_layout Standard
+When the program is run as an R script, it will interactively ask for a
+ flight name, and description of the plots desired.
+ The flight name should have the format 
+\begin_inset Quotes eld
+\end_inset
+
+rf09
+\begin_inset Quotes erd
+\end_inset
+
+ (without quote marks).
+ The plot description can be 0 (all plots), -1 (project default set), or
+ a series of plots in the format 
+\begin_inset Quotes eld
+\end_inset
+
+c(3,5,7)
+\begin_inset Quotes erd
+\end_inset
+
+ (without quotes).
+ A CR reply selects the default set of plots for the project.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<get-data, include=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fname = sprintf("%s%s/%s%s.nc", DataDirectory (), Project, Project, Flight)
+\end_layout
+
+\begin_layout Plain Layout
+
+# VarList must include all variable names that are used in this routine
+\end_layout
+
+\begin_layout Plain Layout
+
+source ("./VarList")
+\end_layout
+
+\begin_layout Plain Layout
+
+Data <- getNetCDF (fname, VarList)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# for most plots, select only points where TASX > 110, and optionally limit
+ time range
+\end_layout
+
+\begin_layout Plain Layout
+
+DataV <- Data[setRange(Data$Time, StartTime, EndTime), ]
+\end_layout
+
+\begin_layout Plain Layout
+
+DataV <- DataV[DataV$TASX > 110, ]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#--------------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+# functions used later:
+\end_layout
+
+\begin_layout Plain Layout
+
+hline <- function(y, col='black', lwd=1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## note: 'Data' is a 'free variable' and needs to exist in the calling
+ environment 
+\end_layout
+
+\begin_layout Plain Layout
+
+  SE <- getStartEnd(Data$Time)
+\end_layout
+
+\begin_layout Plain Layout
+
+  lines (c(Data$Time[getIndex(Data$Time, SE[1])], 
+\end_layout
+
+\begin_layout Plain Layout
+
+           Data$Time[getIndex (Data$Time, SE[2])]), 
+\end_layout
+
+\begin_layout Plain Layout
+
+         c(y, y), col=col, lty=2, lwd=lwd)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+formatTime <- function (time) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  t <- as.POSIXlt (time)
+\end_layout
+
+\begin_layout Plain Layout
+
+  tt <- sprintf ("%d:%02d:%02d", t$hour, t$min, t$sec)
+\end_layout
+
+\begin_layout Plain Layout
+
+  return (tt)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+testPlot <- function (k) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  return(k %in% nplots || nplots == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SmoothInterp <- function (x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## skip if there are fewer than 100 measurements
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (length (x[!is.na(x)]) < 100) {return (x)}
+\end_layout
+
+\begin_layout Plain Layout
+
+  d <- zoo::na.approx (as.vector(x), maxgap=100, na.rm = FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+  d[is.na(d)] <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+  return (signal::filter(signal::sgolay(3, 61), d))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (SavePlotsToFiles) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (SavePlotsToFiles == 2) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    plotfile = sprintf("~/RStudio/%s/%s%sPlotsP.pdf", Project, Project, Flight)
+\end_layout
+
+\begin_layout Plain Layout
+
+  } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+    plotfile = sprintf("~/RStudio/%s/%s%sPlots.pdf", Project, Project, Flight)
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  cairo_pdf (filename = plotfile, onefile=TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## enable the next to get individual png files instead of one large pdf
+\end_layout
+
+\begin_layout Plain Layout
+
+  #### png (file = sprintf ("./Figures/WINTER%s-%%02d.png", Flight))
+\end_layout
+
+\begin_layout Plain Layout
+
+  print (sprintf ("saving plots to file %s", plotfile))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#----------------------------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+### This is a model for adding a function:
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlotn <- function(data) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## be sure that the variables are in 'VarList'.
+ If not, where VarList
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## is defined, add the new variable to the variable names or follow the
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## present definition with VarList <- c(VarList, "NewVariable1", "NewVariable2
+")
+\end_layout
+
+\begin_layout Plain Layout
+
+  # next just resets geometry, in case previous plot used multiple panes
+\end_layout
+
+\begin_layout Plain Layout
+
+  op <- par (mfrow=c(1,1), mar=c(5,5,2,2)+0.1)
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## simplest plot:
+\end_layout
+
+\begin_layout Plain Layout
+
+  plotWAC (data[, c("Time", "Var1", "Var2")])
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+### this section loads functions for searches for maneuvers
+\end_layout
+
+\begin_layout Plain Layout
+
+source ("./PlotFunctions/SpeedRunSearch.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+source ("./PlotFunctions/CircleSearch.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+source ("./PlotFunctions/PitchSearch.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+source ("./PlotFunctions/YawSearch.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+source ("./PlotFunctions/ReverseHeadingSearch.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+### this sets up information for the plot footers, for use by AddFooter()
+\end_layout
+
+\begin_layout Plain Layout
+
+SE <- getStartEnd (Data$Time)
+\end_layout
+
+\begin_layout Plain Layout
+
+i <- getIndex (Data$Time, SE[1])
+\end_layout
+
+\begin_layout Plain Layout
+
+FigFooter=sprintf("%s %s %s %s-%s UTC,",Project,toupper(Flight),strftime(Data$Ti
+me[i], format="%Y-%m-%d", tz='UTC'),strftime(Data$Time[i], format="%H:%M:%S",
+ tz='UTC'),strftime(Data$Time[getIndex(Data$Time,SE[2])], format="%H:%M:%S",
+ tz='UTC'))
+\end_layout
+
+\begin_layout Plain Layout
+
+FigDatestr=strftime(Sys.time(), format="%Y-%m-%d %H:%M:%S %Z")
+\end_layout
+
+\begin_layout Plain Layout
+
+AddFooter <- function() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  CallingFunction <- sub ("
+\backslash
+
+\backslash
+(.*
+\backslash
+
+\backslash
+)", "", deparse (sys.call (-1)))
+\end_layout
+
+\begin_layout Plain Layout
+
+  mtext(paste(FigFooter,'generated by ', CallingFunction, FigDatestr),1,outer=T,
+cex=0.75)
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interpreting the plots
+\end_layout
+
+\begin_layout Standard
+These are short descriptions of the plots generated by each plot function:
+\end_layout
+
+\begin_layout Quotation
+RPlot1: construct flight track with map and height-vs-time
+\end_layout
+
+\begin_layout Quotation
+RPlot2: construct one-per-hour track plots (omitted from default)
+\end_layout
+
+\begin_layout Quotation
+RPlot3: all temperatures, one plot
+\end_layout
+
+\begin_layout Quotation
+RPlot4: scatterplots and differences, individual pairs of temperatures
+\end_layout
+
+\begin_layout Quotation
+RPlot5: all humidity
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+scatterplots, humidity measurements
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+dew point cavity pressures; VCSEL laser intensity
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+vapor pressure, mixing ratio, relative humidity
+\end_layout
+
+\begin_layout Quotation
+RPlot6: ambient pressures
+\end_layout
+
+\begin_layout Quotation
+RPlot7: dynamic pressures
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TAS and MACH
+\end_layout
+
+\begin_layout Quotation
+RPlot8: total pressure (static + dynamic)
+\end_layout
+
+\begin_layout Quotation
+RPlot9: wind components
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+horizontal wind, E and N components
+\end_layout
+
+\begin_layout Quotation
+RPlot10: ground speed components (Schuler oscillation) and GGQUAL
+\end_layout
+
+\begin_layout Quotation
+RPlot11: attack, sideslip
+\end_layout
+
+\begin_layout Quotation
+RPlot12: IRU attitude-angle comparisons
+\end_layout
+
+\begin_layout Quotation
+RPlot13: IRU continued, ACINS, VSPD, altitude
+\end_layout
+
+\begin_layout Quotation
+RPlot14: not present now
+\end_layout
+
+\begin_layout Quotation
+RPlot15: Concentrations: CN, CDP, UHSAS
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+QC housekeeping: flows, laser intensity, CN/UHSAS
+\end_layout
+
+\begin_layout Quotation
+RPlot16: mean diameters
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+liquid water content
+\end_layout
+
+\begin_layout Quotation
+RPlot17: all-flight Skew-T
+\end_layout
+
+\begin_layout Quotation
+RPlot18: plot skew-T for individual climbs and descents: (omitted from default)
+\end_layout
+
+\begin_layout Quotation
+RPlot19: potential-temperature history plots
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+vertical-profile potential temperature plots
+\end_layout
+
+\begin_layout Quotation
+RPlot20: CDP sample size distributions
+\end_layout
+
+\begin_layout Quotation
+RPlot21: RSTB vs time
+\end_layout
+
+\begin_layout Quotation
+RPlot22:UHSAS sample size distributions
+\end_layout
+
+\begin_layout Quotation
+RPlot30: CO and O3
+\end_layout
+
+\begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CO inlet pressure
+\end_layout
+
+\begin_layout Standard
+These names correspond to the names of functions, not necessarily to the
+ plot numbers, because many of the functions generate several plots and
+ it is also possible to generate only a subset of the plots.
+ In the following description of the plots, proper figure numbers for the
+ project-default selections are used for this example, but the numbering
+ may change.
+ The sequence, however, should remain the same.
+\end_layout
+
+\begin_layout Standard
+The plots in this memo are reduced in size compared to the PDF file that
+ is generated by running Review.R.
+ When using this guide, it may be useful to refer to the full-scale plots
+ because some of the legends and other features are hard to read at this
+ reduced size.
+ For each plot, a few-paragraph description is provided.
+ The intent of those descriptions is to suggest how to interpret the plot
+ as an indicator of potential problems.
+ Therefore, most of the descriptions give expected tolerances for differences
+ among sensors or other quantifiable departures from expected behavior that
+ should trigger further investigation of the measurements.
+ That is the intent of these plots: To provide quick indications of problems
+ so that they can be investigated further, usually with other tools.
+ Users should pay particular attention to the tolerances denoted on many
+ plots by dashed lines and to the titles where mean differences between
+ redundant measurements are listed.
+ Once a 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ set of plots is obtained for a project, that set should be used as a reference
+ for future flights because changes in the patterns, even more than tests
+ against specified tolerances, are the best indicators of problems.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<fig-captions>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SE <- getStartEnd (Data$Time)
+\end_layout
+
+\begin_layout Plain Layout
+
+i <- getIndex (Data$Time, SE[1])
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot1aCap <- sprintf("Flight track for %s flight %s on %s, %d--%d UTC",
+ Project, Flight, strftime(Data$Time[i], format="20%y-%m-%d", tz='UTC'),
+ SE[1], SE[2])
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot1bCap <- sprintf("Height vs.
+ time for %s flight %s on %s, %d--%d UTC", Project, Flight, strftime(Data$Time[i
+], format="20%y-%m-%d", tz='UTC'), SE[1], SE[2])
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot3Cap <- "Air temperature (ATy) determined from the different temperature
+ sensors."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot4Cap <- "Comparisons by pairs of temperature sensors.
+ Red continuous lines show the temperature difference multiplied by 50 as
+ a function of the temperature on the abscissa, and dashed red lines show
+ 1C tolerances."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot5Cap <- c("History of measurements of dew point from the available
+ measurements.",
+\end_layout
+
+\begin_layout Plain Layout
+
+             "Comparison of available measurements to DP
+\backslash
+
+\backslash
+_DPB as a reference.",
+\end_layout
+
+\begin_layout Plain Layout
+
+           "Measured pressures in the cavities of the dew-point sensors,
+ plotted with the ambient pressure (PSXC) for reference.",
+\end_layout
+
+\begin_layout Plain Layout
+
+            "History of measurements of water vapor pressure [hPa], mixing
+ ratio [g/kg], and relative humidity.")
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot6Cap <- "History of available pressure measurements, both uncorrected
+ (top) and after application of the LAMS-derived pressure corrections (bottom)."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot7Cap <- c("History of available measurements of dynamic pressure, both
+ uncorrected (top) and after application of the LAMS-derived pressure correction
+s (bottom).",
+\end_layout
+
+\begin_layout Plain Layout
+
+      "History of redundant measurements of true airspeed and Mach number.")
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot8Cap <- "Total pressure measurements obtained by adding the independent
+ pairs of measurements PSFD+QCF and PSFRD+QCFR (i.e., the uncorrected measurements
+).
+ Exactly the same plot is obtained for the corrected measurements because
+ the pressure-correction function is applied to pairs of PS and QC measurements
+ with opposite sign, positive for PS and negative for QC."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot9Cap <- c("History of wind measurements, horizontal (WDC/WSC) and vertical
+ (WIC).
+ See the next plot for the horizontal wind plotted in terms of easterly
+ and northerly components.",
+\end_layout
+
+\begin_layout Plain Layout
+
+"Westerly and northerly components of the horizontal wind [m/s], as shown
+ in the previous plot in terms of direction and speed.")
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot10Cap <- "Comparison of ground-speed components measured by the GPS
+ and IRU units (blue and dashed orange lines), along with the difference
+ (red line).
+ Dashed red lines show $
+\backslash
+
+\backslash
+pm$1
+\backslash
+
+\backslash
+,m/s limits."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot11Cap <- "Measurements of the angles of attack and sideslip (blue traces,
+ [deg.]), plotted with the reference values used for calibration that depend
+ on the assumption of zero vertical wind or zero real sideslip not caused
+ by wind gusts."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot12Cap <- "Comparison of attitude angles measured by the two duplicate
+ research inertial systems on the C-130, with dashed reference lines indicating
+ the uncertainty limits quoted by the manufacturer for the angle measurements.
+ The red lines show the differences multiplied by 50 for pitch and roll
+ and by 500 for heading, with a further offset of 180$^{
+\backslash
+
+\backslash
+circ}$ for heading to center the difference plot."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot13Cap <- "Vertical acceleration (top), vertical aircraft velocity (middle),
+ and aircraft altitude (bottom) for the available redundant measurements."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot14Cap <- "UHSAS"
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot15Cap <- "Particle concentrations from the CN counter and PCASP aerosol
+ distrometer (top, [cm$^{-3}$) and hydrometeor concentrations from the CDP,
+ SPP100, FSSP300, and 2DC (bottom, [cm$^{-3}$] exc.
+ 2DC [liter${^-1}$], bottom)." 
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot16Cap <- c("Mean diameters [$
+\backslash
+
+\backslash
+mu$m] measured by the CDP and FSSP (top), the FSSP300 and PCASP (middle),
+ and 2DC [bottom].", "Measurements of liquid water content from the SPP100,
+ CDP, and King probe (top); the power required to maintain King-probe temperatur
+e (middle), and the extimated liquid water content from the 2DC probe with
+ the assumption that all particles are liquid.", "Additional characteristics
+ of the FSSP: percentage of DOF-accepted particles (top), percentage of
+ TOF-accepted particles (middle), and the laser power (bottom).")
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot17Cap <- "Plot of all temperature and pressure measurements, averaged
+ in 5 hPa intervals, for the flight.
+ The only restriction on data is that only measurements where TASX exceeded
+ 60 m/s were used."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot18Cap <- "Skew-T plot of data from the time interval indicated at the
+ top of the plot, with all points plotted and without averaging."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot19Cap <- c("Measurements of potential and virtual potential temperature
+ (top panel) and of Bolton-formula equivalent potential temperature (THETAE),
+ Davies-Jones pseudoadiabatic potential temperature (THETAP), and wet-equivalent
+ potential temperature (THETAQ).
+ All units are kelvin.", "Vertical profiles of the same measurements shown
+ in the preceding figure.")
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot20Cap <- "Size distributions measured by the CDP, each plot representing
+ 1-s of measurements." 
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot21Cap <- "Surface temperature measured radiometrically (RSTB) [deg.C]"
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot22Cap <- "Size distributions measured by the UHSAS, each plot representing
+ 1-s of measurements."
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<track-plot, fig.cap=c(RPlot1aCap, RPlot1bCap), include=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot(1)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot1.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot1 (Data, Flight)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<plot-2>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot(2)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot3.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot2 (Data, Flight)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Flight track:
+\end_layout
+
+\begin_layout Standard
+The first plot function generates two flight-track plots, Fig.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:track-plot1}
+\end_layout
+
+\end_inset
+
+ a plan-view and Fig.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:track-plot2}
+\end_layout
+
+\end_inset
+
+ showing height-vs-time.
+ These provide general context that may be useful when looking at the remaining
+ plots, but they can be suppressed if desired because they usually don't
+ indicate problems with data quality.
+ In some cases the flight track becomes overlaid to such an extent that
+ it is hard to use, so for such cases it may be useful to enable nplot=2,
+ which plots separate flight tracks for each hour of flight.
+ Normally this is disabled as not particularly useful for quality-review
+ of the data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<plot-3-temperature, fig.cap=RPlot3Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for (np in 3:4) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (file.exists (sprintf ("./PlotFunctions/RPlot%d.R", np))) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (testPlot(np)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      # print(paste('Plot',np))
+\end_layout
+
+\begin_layout Plain Layout
+
+      eval(parse(text=sprintf("source(
+\backslash
+"PlotFunctions/RPlot%d.R
+\backslash
+")", np)))
+\end_layout
+
+\begin_layout Plain Layout
+
+      eval(parse(text=sprintf("RPlot%d(DataV)", np)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Air temperature:
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:plot-3-temperature1}
+\end_layout
+
+\end_inset
+
+ shows the time history of measured air temperature from the various temperature
+ sensors, and Fig.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:plot-3-temperature2}
+\end_layout
+
+\end_inset
+
+ compares these sensors in pairs of measurements.
+ After all corrections, these should agree to within about 1
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C; claimed uncertainty is about 0.3
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C.
+ In particular, ATHR1 and ATHR2 should agree to within about 0.3
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C.
+\begin_inset space ~
+\end_inset
+
+ AT_A, the temperature from the aircraft avionics system, will often show
+ larger scatter; this should not be considered a problem unless it exceeds
+ about 2 C.
+ It appears mostly because that measurement has slow response, either from
+ filtering or delays or both, and this usually accounts for the errors.
+ It is common to see two lines on the AT_A-vs-ATHL2 plot for the same reason;
+ one is from measurements during climb and the other from those during descent.
+ For this flight, AT_A is higher than ATH1 or ATH2 when the temperature
+ is lower than about -20
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C; this has been common in CSET flights.
+\end_layout
+
+\begin_layout Paragraph
+Humidity:
+\end_layout
+
+\begin_layout Standard
+Four plots are generated by function RPlot5).
+ The first (Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:humidity1}
+\end_layout
+
+\end_inset
+
+) shows the history of various measurements of dew point, including those
+ from the VCSEL for which dew point must be calculated from the direct measureme
+nts.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<humidity, fig.cap=RPlot5Cap, fig.height=5.1>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (5)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot5.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot5 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Agreement among these measurements to within about 1
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C is good.
+ It is common to have problems during and after descent, like that shown
+ near 18:15 on this plot, where the dew-point sensors overheat in an effort
+ to remove thick condensate that forms when the temperature increases rapidly.
+ ATX is also plotted on this history to provide a reference: When the dew
+ point temperature exceeds the temperature, even by a few degrees, there
+ is very likely a problem because this almost never occurs in reality.
+ DP_DPL has been responding more slowly than has DP_DPR; the latter is matching
+ the VCSEL measurements fairly well except at points of overshoot following
+ descents.
+ The differences between the mean values for the dew-point sensors (listed
+ in the title of the plot) should usually be less than about 0.5
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C.
+\end_layout
+
+\begin_layout Standard
+The second plot (Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:humidity2}
+\end_layout
+
+\end_inset
+
+) compares the measurements to one selected as a reference, here DP_VXL.
+ The overshoot problem appears in this plot in the extension to high dew
+ point, above 25
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+C, values that appear unrealistic and are above anything measured by the
+ UV hygrometer.
+ The larger scatter of blue dots (DP_DPL) in this plot, in comparison to
+ the red dots (DP_DPR), reflects the slower response of DP_DPL.
+ This appears to be typical and acceptable behavior for the dew-point sensors
+ on the GV.
+ For dewpoint values below about 
+\begin_inset Formula $-60^{\circ}$
+\end_inset
+
+C, the dewpoint sensors are usually unable to respond, so for cases that
+ include such values for DP_VXL it is common for the values of DP_DPL and
+ DP_DPR to be too high.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:humidity3}
+\end_layout
+
+\end_inset
+
+ shows the cavity pressures in the dew-point hygrometers.
+ These are significantly below the ambient pressure, which is a result of
+ their orientation on the aircraft.
+ It would be preferable if that orientation provided a cavity pressure near
+ or above ambient, because this reduction of pressure in the cavity reduces
+ the range and response speed of the sensors.
+ It is curious that the cavity pressure for DPR is much higher than that
+ for DPL for ambient pressure near or above 800 hPa.
+ However, the plot doesn't seem to indicate any problems with the measurements.
+ The bottom panel of this plot shows the laser intensity for the VCSEL,
+ which is expected to be between the two dashed red lines during normal
+ operation.
+ 
+\end_layout
+
+\begin_layout Standard
+The final humidity plot, Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:humidity4}
+\end_layout
+
+\end_inset
+
+, shows the history of water vapor pressure, mixing ratio, and relative
+ humidity from the various measurement systems.
+ Excursions above relative humidity of 100% should be rare except in over-heatin
+g events like that near 18:15.
+ The dashed cyan line in the top segment of this plot, labeled EW@ATX, shows
+ the water vapor pressure that corresponds to equilibrium at the air temperature
+ measured by ATX.
+ In the top plot, the traces should almost overlap at the plot resolution
+ for normal operation, except for very low water vapor pressures and overshootin
+g regions (for the dew-point sensors).
+ The mixing ratio plot and relative humidity plot show different perspectives
+ on the humidity measurements.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<static-pressure, fig.cap=RPlot6Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (6)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot6.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot6 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Ambient or static pressure: 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:static-pressure}
+\end_layout
+
+\end_inset
+
+ compares the corrected measurement of static pressure, PSFC, to that provided
+ by the avionic system (PS_A), and for reference also shows the uncorrected
+ pressure measurement PSF.
+ These plotted lines will usually almost completely overlap.
+ The red line plots the difference, multiplied by 50 and offset by 600 hPa,
+ as indicated by the red scale on the right axis.
+ It is normal for PSFC to be higher than PS_A, but the measurements should
+ not be offset more than about 1
+\begin_inset space ~
+\end_inset
+
+hPa different in the range from FL290 -- FL410 because this is the region
+ covered by RVSM standards that PS_A must meet.
+ This plot barely reaches that pressure range, but there the difference
+ is outside expected limits.
+ Corrections are being applied to PSFC based on the earlier LAMS calibrations,
+ so it will be important to consider if something has changed those calibrations.
+ (Measurements from the HCRTEST program in late 2014 showed a similar difference
+ in comparison to LAMS results.
+ It is also possible that the presence of the large pods has changed the
+ required pressure corrections.
+ For CSET, the best approach will be to check for consistency of this result
+ from flight to flight and then depend on a new calibration, either from
+ HCRTEST or ARISTO, to resolve the difference.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<dynamic-pressure, fig.cap=RPlot7Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (7)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot7.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot7 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Dynamic pressure:
+\end_layout
+
+\begin_layout Standard
+Measurements of dynamic pressure, similar to those from the ambient pressure,
+ are shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:dynamic-pressure1}
+\end_layout
+
+\end_inset
+
+.
+ The uncertainty in these measurements should be about 0.3 hPa, so the difference
+s shown are large compared to expected differences and indicate a possible
+ problem, in particular with QCFC.
+ HCRTEST results from LAMS suggested that the airspeed measurement based
+ on QCFC may be low by about 0.7--1.0
+\begin_inset space ~
+\end_inset
+
+m/s (TASF).
+ As for PSFC, it may be best to check for consistency with this patter from
+ flight to flight and then await a new calibration to resolve the apparent
+ problem.
+ and with QCFC.
+ redundant sets QCFC and QCFRC (bottom panel) should agree within about
+ this tolerance.
+ As for PSFD and PSFRD, an offset is expected but that offset should remain
+ consistent.
+ Any significant change should be an indicator of a problem.
+ An additional plot, Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:dynamic-pressure2}
+\end_layout
+
+\end_inset
+
+, shows two measurements dependent on the dynamic-pressure measurements,
+ TAS and MACH.
+ TAS measurements normally should agree to within about 1
+\begin_inset space ~
+\end_inset
+
+m/s, and the Mach lines normally overlap to about the resolution of the
+ plot.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<total-pressure, fig.cap=RPlot8Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (8)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source ("PlotFiles/RPlot8.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot8 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Total pressure:
+\end_layout
+
+\begin_layout Standard
+Adding the measurements of dynamic and ambient pressure gives the total
+ pressure measured at the input of a pitot tube.
+ The data-system value (PtotF) and the value from the avionics system are
+ compared in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:total-pressure}
+\end_layout
+
+\end_inset
+
+.
+ These usually should agree to within about 1 hPa, the limit shown by the
+ red dashed lines.
+ The mean difference shown here, -0.6
+\begin_inset space ~
+\end_inset
+
+hPa, is larger than observed in past projects and another flag that the
+ pressure measurements, while good, are not of the best quality possible
+ and merit further attention.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<wind, fig.cap=RPlot9Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (9)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source ("PlotFiles/RPlot9.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot9 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Wind:
+\end_layout
+
+\begin_layout Standard
+The measurements of horizontal and vertical wind are shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:wind1}
+\end_layout
+
+\end_inset
+
+, and also in terms of easterly and southerly components in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:wind2}
+\end_layout
+
+\end_inset
+
+.
+ Mean vertical wind averaged over the full flight should be close to zero,
+ usually with absolute magnitude less than 0.3
+\begin_inset space \thinspace{}
+\end_inset
+
+m/s.
+ The offset here is larger than normal and suggests a possible need for
+ revision of the sensitivity coefficient for angle of attack.
+ In CSET, the vertical-wind measurement has appeared to be somewhat inconsistent
+ and will need further attention.
+ The horizontal wind measurements can be used to check for reasonable continuity
+ without excessive noise, although when the wind speed is weak there may
+ be substantial noise in the WDC measurements.
+ Wrap-around from 0 to 360 causes vertical lines in this plot that can be
+ more frequent when the wind direction is near 0 or 360.
+ For this reason, the second plot, showing easterly and southerly components,
+ can be a better indicator of continuity.
+ The faint green lines are measurements from the IRU alone and are expected
+ to be of lesser quality than the wind measurements WSC and WDC, but large
+ differences are not normal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<schuler-oscillation, fig.cap=RPlot10Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (10)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot10.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot10 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Ground-speed components (Schuler oscillation):
+\end_layout
+
+\begin_layout Standard
+The IRU measurements of ground speed will usually have some error that varies
+ in a Schuler oscillation with a period of about 84 min.
+ The magnitude of this oscillation is usually less than a few m/s, and in
+ the wind calculations this oscillation is removed by adjustment to the
+ GPS measurements, but excessive amplitude or unexpectedly noisy measurements
+ can indicate a problem worth investigating.
+ Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:schuler-oscillation}
+\end_layout
+
+\end_inset
+
+ shows the difference between ground-speed measurements from the IRU and
+ the GPS.
+ The magnitude of the oscillation here is larger than typical; that from
+ CSET flight 2 was much smaller in amplitude.
+ This probably reflects a larger-than-normal error in initial alignment.
+ These errors do not have much effect on the final horizontal-wind measurements,
+ but they are associated with errors in pitch and roll that can affect the
+ vertical wind.
+ The lowest panel in this plot shows the value of GGQUAL, which will be
+ 5 for OmniStar reception from the Novatel GPS receiver, indicating highest-qual
+ity measurements.
+\end_layout
+
+\begin_layout Paragraph
+Angles of attack and sideslip:
+\end_layout
+
+\begin_layout Standard
+The sensitivity coefficients for angle of attack and sideslip are determined
+ using reference values of attack and sideslip (here plotted as AOAREF and
+ SSREF) that would be valid measures of the angles of attack and sideslip
+ if there were respectively zero vertical wind and zero sideways wind gust.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<attack-sideslip, fig.cap=RPlot11Cap, fig.height=5>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (11)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot11.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot11 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:attack-sideslip}
+\end_layout
+
+\end_inset
+
+ shows a comparison of the measurements to the reference values.
+ If the calibration is valid, the blue and red traces in the top plot and
+ the blue and green traces in the bottom plot should match in the mean,
+ with occasional fluctuations caused by real wind gusts.
+ PITCH is also shown in the top plot because, in the absence of both vertical
+ wind and aircraft climb or descent, the pitch would match the angle of
+ attack.
+ For the GV, the usual angle of attack is about 
+\begin_inset Formula $3\pm1^{\circ}$
+\end_inset
+
+, so these limits are denoted on the top panel.
+ Notice the gradual decrease in angle of attack during the course of the
+ flight; this is normal behavior as the weight of the aircraft decreases.
+ Agreement in the mean between AKRD and AOAREF is a good indication that
+ the radome calibration is valid.
+ This is useful to monitor because there have been some unexplained changes
+ in radome behavior, perhaps from changes in mounting alignment or from
+ flow interference from small accretions of dirt near the radome ports.
+ The example plot shown for research flight 3 shows disagreement between
+ AKRD and AOAREF at about the limit that should be acceptable, because an
+ angle-of-attack error of 0.17
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+ would result in a vertical-wind error (at TAS=140
+\begin_inset space ~
+\end_inset
+
+m/s) of about 0.4
+\begin_inset space ~
+\end_inset
+
+m/s, similar to the mean offset measured in the vertical wind for this flight.
+ In this case, the sideslip matches the reference values very well.
+\end_layout
+
+\begin_layout Paragraph
+Aircraft attitude angles: pitch, roll, heading
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<iru-comparisons, fig.cap=RPlot12Cap, fig.height=4.8>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (12)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot12.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot12 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The research IRUs provide redundant measurements of the attitude angles,
+ so comparing them tests if they remain consistent.
+ They should agree to within about 0.05
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+ except for possible errors in alignment when the units are installed in
+ the aircraft.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:iru-comparisons}
+\end_layout
+
+\end_inset
+
+ shows the measurements from the two inertial systems and also a magnified
+ (red) plot of the differences between the two units (IRS1 value minus IRS2
+ value).
+ Dashed red lines show the expected tolerances for these magnified differences.
+ The dashed red lines provide guidance; normal operation should produce
+ red lines than lie within the dashed red lines in each plot.
+ For pitch, typical values are about 3
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+ as expected but the difference between the two units is 0.15
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+, much larger than expected.
+ The offset for research flight 2 was similar.
+ This appears to be a difference between how the two units are installed,
+ because the standard deviation of that difference is quite small, about
+ 0.02
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+.
+ Because this is so steady for this flight, it is probably an indication
+ of a real difference in alignment, which should be considered if the primary
+ unit used for wind calculations is changed.
+ For CSET the mean differences in all angles (IRU1-IRU2) are about $-0.15$
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+, +0.17
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+, and +0.54
+\begin_inset Formula $^{\circ}$
+\end_inset
+
+ for, respectively, pitch, roll, and heading, so these values have been
+ subtracted from the difference plots.
+ The corresponding values for DEEPWAVE were $-0.20$, +0.19, and +0.49.
+ These are reasonably consistent but suggest small changes in the relative
+ orientation of the two IRUs between these two projects..
+\end_layout
+
+\begin_layout Paragraph
+Vertical acceleration, vertical velocity of the aircraft, and aircrat altitude
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<iru-acins, fig.cap=RPlot13Cap, fig.height=5>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (13)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot13.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot13 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:iru-acins}
+\end_layout
+
+\end_inset
+
+ provides additional information on the performance of the INS and GPS systems.
+ The top panel shows a comparison of the measurements of vertical acceleration;
+ these should match to strict tolerance because the acceleration is integrated
+ twice to get the altitude.
+ The difference, shown here as -0.003, should be less than about 0.01 in magnitude
+ for normal good operation of the inertial units.
+ This does not have to be exactly zero because the data used are qualified
+ to have TASX > 110, so some brief periods near the start and end of flights
+ can be omitted.
+ The middle panel shows the vertical speed of the aircraft as measured by
+ three independent systems.
+ All are in good agreement, and the flight-mean values are 0.023 and -0.009
+\begin_inset space \thinspace{}
+\end_inset
+
+m/s respectively for the inertial and GPS-Novatel units.
+ The mean velocity should be very close to zero for a flight that takes
+ off and lands at the same airport or at the same geometric altitude.
+ These values, esp.
+\begin_inset space ~
+\end_inset
+
+that for the IRS, are larger than normal: The uncertainty associated with
+ GGVSPD is about 0.03
+\begin_inset space ~
+\end_inset
+
+m/s, which for a flight of about 7
+\begin_inset space ~
+\end_inset
+
+h would integrate (if always of the same sign) to an error in altitude of
+ about 750 m, so this is an extreme value larger than expected.
+ The observed means for VSPD and GGVSPD seem reasonable in comparison to
+ other flights.
+ The bottom panel will normally show the three measurements of altitude
+ from independent systems overlapping so much as to be indistinguishable.
+ In this case, if there are occasional spikes in the altitude from the Novatel
+ GPS, as observed in some previous projects, that will indicate a problem
+ needing investigation.
+ Here there is no indication of a problem.
+\end_layout
+
+\begin_layout Paragraph
+CN, PCASP, FSSP, CDP, FSSP300 concentrations
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<cn-fssp, fig.cap=RPlot15Cap, fig.width=6.5, fig.height=7>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (15)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source ("PlotFiles/RPlot15.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot15 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The plots in this section show measurements from particle and hydrometeor
+ distrometers on the GV.
+ The top panel of the first figure, Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:cn-fssp1}
+\end_layout
+
+\end_inset
+
+, shows the CN concentration along with two concentrations from the UHSAS,
+ the red trace representing the total concentration and the sky-blue trace
+ denoted the concentration of particles larger than 100 
+\begin_inset Formula $\mu$
+\end_inset
+
+m in diameter.
+ (PCASP, listed in the legend as CONCP, is a remnant from the test flights
+ and is not present for this flight.
+ The bottom panel shows concentrations from the CDP and the 2DC.
+ The apparent floor on the plot of CDP concentration arises because that
+ is the threshold for a single droplet counted in the 1-s interval used
+ for these measurements.
+ Zero values are reset to missing for these log plots.
+ CDP concentrations of order 100/cm
+\begin_inset Formula $^{-3}$
+\end_inset
+
+ are expected in water cloud; and should correlate with measured liquid
+ water content from the King probe (shown below).
+ CDP concentrations of a few tenths/cm
+\begin_inset Formula $^{-3}$
+\end_inset
+
+ result mostly from detection of aerosols.
+ The 2DC concentration should remain zero in cases of flight outside cloud,
+ as it does except for a few brief bursts green lines).
+ A steady 2DC concentration above zero in clear air may indicate a problem
+ with the uniform illumination of diodes or a bad diode in the instrument.
+\end_layout
+
+\begin_layout Standard
+The next plot, Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:cn-fssp2}
+\end_layout
+
+\end_inset
+
+, shows some housekeeping measurements useful for monitoring the status
+ of the particle-measuring instruments.
+ In the top panel, the blue trace (USMPFLW) and the green trace (USHF) are
+ respectively the flow and sheath flow in the UHSAS, both expected to be
+ in the range 0.8--1.0 as indicated by the blue-green dashed lines.
+ FCNC and XICNC are respectively the sample flow and isokinetic side-flow
+ in the CN counter, expected to be in the range indicated by the dashed
+ red lines.
+ The orange line represents the PCASP flow and will not be present while,
+ as for this flight, the PCASP is not installed on the aircraft.
+ The bottom panel shows some laser monitoring variables, UREF that for the
+ UHSAS (expected to be above the dashed blue line), USCAT for the UHSAS
+ background scatter (expected to be below the dashed green line), and PREF
+ for the PCASP (here not present but expected to be between the dashed red
+ lines if present).
+ 
+\end_layout
+
+\begin_layout Paragraph
+Mean diameters and liquid water content of hydrometeors
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<dbar-plwc, fig.cap=RPlot16Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (16)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFiles/RPlot16.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot16 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fig:dbar-plwc1
+\end_layout
+
+\end_inset
+
+ shows measurements of the mean diameters measured by the CDP, UHSAS, and
+ 2DC.
+ These measurements and those of liquid water content can be quite noisy
+ and therefore hard to interpret, so this plot and the nexxt one have been
+ smoothed over running periods of 61 s using cubic Savitzky-Golay polynomials.
+ That led to much smoother plots that are easier to interpret, but at the
+ expense of losing fine resolution in cases of short passage through clouds.
+ For that reason, this plot and the others in this section are likely only
+ useful for data-quality review, not for analysis conclusions.
+\end_layout
+
+\begin_layout Standard
+The mean diameter shown in the top panel of Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:dbar-plwc1}
+\end_layout
+
+\end_inset
+
+ shows reasonable behavior for the CDP for low-level clouds where droplet
+ sizes are expected to be small.
+ For the UHSAS, the measurements are dominated by particles in the smallest-size
+ channels; this appears suspicious to me, and it is more common to see more
+ variation than this in the UHSAS mean diameter, but the size distributions
+ (shown below) seem reasonable so I'm not sure there is a problem.
+ The mean diameters measured by the 2D seem reasonable and show a brief
+ period of larger-droplet measurements near the end of the flight.
+\end_layout
+
+\begin_layout Standard
+The same smoothing is applied to the liquid water content measurements shown
+ in the top panel of Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:dbar-plwc2}
+\end_layout
+
+\end_inset
+
+.
+ In the plotted case, there is too little liquid water content to conclude
+ much except that the measurements properly show very small values, with
+ a suspicious offset in the variable PLWCC that may indicate poor removal
+ of the zero value resulting from concentrations above the threshold CDP
+ concentration for calculating the offset.
+ For a case like this, it is worth checking on the offset in use for the
+ King probe zero adjustment.
+ The middle panel in this figure shows the power used by the King probe.
+ This should remain steady during the project unless probe elements are
+ changed.
+ The guidelines on this plot can help detect departures from normal operation.
+ Finally, the bottom panel shows the liquid water content deduced from the
+ 2DC probe.
+ Here it is appropriately quiet outside a few brief passes through cloud
+ elements.
+\end_layout
+
+\begin_layout Standard
+For monitoring purposes, Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:dbar-plwc3}
+\end_layout
+
+\end_inset
+
+ shows some measurements characterizing the operation of the FSSP.
+ The instrument rejects droplets for two reasons, either because it estimates
+ they are outside the depth of field or because their transit time is shorter
+ than the average and can indicate passage through the edges of the beam.
+ The displayed results are too noisy and the probe was apparently not working
+ properly, so better examples may be obtained from the WINTER test flights
+ and this section will be updated then.
+\end_layout
+
+\begin_layout Paragraph
+Plots on a thermodynamic (skew-T) diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<skewt-all, fig.cap=RPlot17Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (17)) {RPlot17 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Skew-T diagrams can indicate problems if they show regions where the temperature
+ decreases with altitude faster than expected for parcel ascent, and they
+ can also indicate layers of strong stability where boundary-layer pollution
+ may be trapped.
+ They can also indicate the potential for the development of clouds and
+ the potential for severe weather.
+ A skew-T plot is included here (Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:skewt-all}
+\end_layout
+
+\end_inset
+
+ for information and context, but as long as the appearance remembles this
+ plot it will probably not add to the quality-control information.
+ There is also a section of this program, suppressed in the project configuratio
+n, that searches for climbs and descents and constructs separate plots for
+ them.
+ Include 18 in the sequence named 'nplots' to see these individual plots.
+ They are suppressed in this memo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<skewt-climb-descent, fig.cap=RPlot18Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (18)) {RPlot18 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Potential temperature profiles
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<potential-temperatures, fig.cap=RPlot19Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (19)) {RPlot19 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:potential-temperatures1}
+\end_layout
+
+\end_inset
+
+ shows the history of measurements of various potential temperatures during
+ the flight, and Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:potential-temperatures2}
+\end_layout
+
+\end_inset
+
+ shows the same measurements in vertical profile.
+ The latter can be useful because it is expected that potential temperature
+ (THETA or THETAV) will normally decrease or remain steady as the altitude
+ increases, and uniform regions indicate possible well-mixed regions such
+ as the Earth's boundary layer, often capped by modest stability reflected
+ in increasing THETA.
+ These profiles often will show multiple lines because all individual measuremen
+ts are plotted in connected lines, so for example there may be one plot
+ for ascent and one for descent.
+ Much more can be deduced by using profiles like these, but for the purposes
+ of data review the best test is to expect plots resembling these and investigat
+e departures.
+ For example, in these plots there are right-ward excursions near 800 hPa
+ that originate from overheating of the dew-point sensors.
+ Features like these should be investigated if they haven't been understood
+ from the preceding plots.
+\end_layout
+
+\begin_layout Paragraph
+Hydrometeor size distributions
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<droplet-size-distributions, fig.cap=RPlot20Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (20)) {RPlot20 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Size distributions measured by the CDP and SPP100 (FSSP) are shown in the
+ next set of plots beginning with Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:droplet-size-distributions1}
+\end_layout
+
+\end_inset
+
+.
+ Individual plots show measurements made over 1-s, as labeled at the top
+ of the plots, and plots are only generated when at least one channel in
+ the CDP measures a concentration of more than 1 cm
+\begin_inset Formula $^{-3}$
+\end_inset
+
+.
+ Once three pages of plots are generated, the plotting is suppressed, so
+ this only provides an initial limited sample.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<speed-run-search, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SpeedRunSearch (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+if (SavePlotsToFiles) {
+\end_layout
+
+\begin_layout Plain Layout
+
+dev.off()
+\end_layout
+
+\begin_layout Plain Layout
+
+system (sprintf ("evince %s", plotfile))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+How to add new plots
+\end_layout
+
+\begin_layout Standard
+Here is the procedure for adding a plot to this routine:
+\end_layout
+
+\begin_layout Enumerate
+Copy this code and insert it at the end of Review.R:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<model-addition, echo=TRUE, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+### This is a model for adding a function:
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlotN <- function(data) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  # next just resets geometry, in case previous plot used multiple panes
+\end_layout
+
+\begin_layout Plain Layout
+
+  op <- par (mfrow=c(1,1), mar=c(5,5,2,2)+0.1)
+\end_layout
+
+\begin_layout Plain Layout
+
+  ## simplest plot: variables "Var1" and "Var2" vs time
+\end_layout
+
+\begin_layout Plain Layout
+
+  plotWAC (data[, c("Time", "Var1", "Var2"), ylab="Var"]  
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Change N in the name RPlotN to some number not in use.
+ The present version uses 1--20, so a good choice might be to use 100; i.e.,
+ RPlotN should be replaced by RPlot100 or some other number that it is unlikely
+ anyone else will use.
+\end_layout
+
+\begin_layout Enumerate
+Make sure that the needed variables are in 
+\begin_inset Quotes eld
+\end_inset
+
+VarList
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If not, add them in the statement where VarList is defined, or alternately
+ follow that statement (immediately below) with this statement: VarList
+ <- c(VarList, "Var1", "Var2") where Var1 and Var2 are replaced by the names
+ of variables you want to use.
+ They must be in the netCDF file or else this program will crash; it is
+ not protected against this error.
+\end_layout
+
+\begin_layout Enumerate
+Then, follow where the above function definition is inserted with this R
+ code:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<run-model, echo=TRUE, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot100 (DataV)   # change '100' to whatever number you have used
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+You can then make additional modifications to the function as you see the
+ results and want to change them.
+ Use the functions RPlot[1:20] in Review.R for ideas of ways to tailor the
+ plots.
+ Also, there are some functions available that you may find useful:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+hline (X) will draw a black dashed horizontal line on the plot at ordinate
+ value X.
+\end_layout
+
+\begin_layout Enumerate
+SmoothInterp (X) will return a smoothed version of X (which might be a variable
+ like data$TASX) as referenced in your routine).
+ Usage: Xsmoothed <- SmoothInterp (X).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Finally, please write a description of how to interpret the new plot and
+ what to look for when reviewing data.
+ Give that to me for incorporation into future versions of this memo.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family sans
+\color blue
+-- End of Memo --
+\end_layout
+
+\begin_layout Standard
+Reproducibility:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+Project:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WINTER
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+Programs:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{thisFileName}.Rnw, 
+\backslash
+Sexpr{thisFileName}.R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+Original Data:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+/scr/raf
+\backslash
+_data/
+\backslash
+Sexpr{Project}/
+\backslash
+Sexpr{Project}
+\backslash
+Sexpr{Flight}.nc
+\end_layout
+
+\end_inset
+
+ -- for testing
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\shape smallcaps
+\color blue
+Git:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/WilliamCooper/WINTER.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

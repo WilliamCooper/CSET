@@ -1,7 +1,7 @@
 
 ### plot 7: dynamic pressure; also TAS and MACH
 RPlot7 <- function (data) { 
-  ## needs QCF, QCR, QCFC, QCRC, QC_A, TASF, TASR, TAS_A, TASHC, 
+  ## needs QCF, QCR, QCFC, QCRC, QC_A, TASF, TASR, TAS_A,
   ## MACHF, MACHR, MACH_A
   op <- par (mar=c(2,4,1,2)+0.1)
   layout(matrix(1:2, ncol = 1), widths = 1, heights = c(5,6))
@@ -27,13 +27,12 @@ RPlot7 <- function (data) {
   AddFooter ()
   # add TAS and MACH plots:
   op <- par (mar=c(2,4,1,1)+0.1)
-  plotWAC (data[, c("Time", "TASF", "TASR", "TAS_A", "TASHC")], 
+  plotWAC (data[, c("Time", "TASF", "TASR", "TAS_A")], 
            col=c('blue', 'darkorange', 'darkgreen', 'red'), ylab='TASy [m/s]', 
            legend.position='bottom')
-  title (sprintf ("diff vs TASF: %.1f (TASR), %.1f (TAS_A), %.1f (TASHC)",
+  title (sprintf ("diff vs TASF: %.1f (TASR), %.1f (TAS_A)",
                   mean (data$TASR-data$TASF, na.rm=TRUE), 
-                  mean (data$TAS_A-data$TASF, na.rm=TRUE),
-                  mean (data$TASHC-data$TASF, na.rm=TRUE)), cex.main=0.75)
+                  mean (data$TAS_A-data$TASF, na.rm=TRUE)), cex.main=0.75)
   op <- par (mar=c(5,4,1,1)+0.1)
   plotWAC (data[, c("Time", "MACHF", "MACHR", "MACH_A")], 
            col=c('blue', 'darkorange', 'darkgreen'), ylab='MACHy', 

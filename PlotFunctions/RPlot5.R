@@ -54,7 +54,9 @@ RPlot5 <- function (data) {
   # pulling legend out of plotWAC to increase font size
   legend('bottomright',c("EW@ATX","EW_DPL", "EW_DPR", "EW_VXL"),col=c("cyan","blue","darkgreen","red"),text.col=c("cyan","blue","darkgreen","red"),lty=c(2,1,1,1),lwd=c(2,1,1,1))
 #  title ("cyan line: equilibrium vapor pressure at ATX")
-  plotWAC (data[, c("Time", "MR")], ylab="mixing ratio [g/kg]",
+  data$MRDPL <- 0.622 * data$EW_DPL / (data$PSFC-data$EW_DPL) * 1000
+  data$MRDPR <- 0.622 * data$EW_DPR / (data$PSFC-data$EW_DPR) * 1000
+  plotWAC (data[, c("Time", "MR", "MRDPL", "MRDPR")], ylab="mixing ratio [g/kg]",
            logxy='y', ylim=c(0.01, 100),cex.lab=1.5,cex.axis=1.5)
   op <- par (mar=c(5,5,1,1)+0.1)
   data$RHVXL <- 100 * data$EW_VXL / MurphyKoop (data$ATX, data$PSXC)
