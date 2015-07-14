@@ -644,7 +644,7 @@ DataV <- Data[setRange(Data$Time, StartTime, EndTime), ]
 
 \begin_layout Plain Layout
 
-DataV <- DataV[DataV$TASX > 110, ]
+DataV <- DataV[(!is.na (DataV$TASX)) & (DataV$TASX > 110), ]
 \end_layout
 
 \begin_layout Plain Layout
@@ -1427,7 +1427,7 @@ RPlot20: CDP sample size distributions
 \end_layout
 
 \begin_layout Quotation
-RPlot21: RSTB vs time
+RPlot21: radiometric measurements (surface T and IR irradiance)
 \end_layout
 
 \begin_layout Quotation
@@ -1574,29 +1574,29 @@ RPlot4Cap <- "Comparisons by pairs of temperature sensors.
 
 \begin_layout Plain Layout
 
-RPlot5Cap <- c("History of measurements of dew point from the available
- measurements.",
+RPlot5Capa <- "History of measurements of dew point from the available measureme
+nts."
 \end_layout
 
 \begin_layout Plain Layout
 
-             "Comparison of available measurements to DP
+RPlot5Capb <- "Comparison of available measurements to DP
 \backslash
 
 \backslash
-_DPB as a reference.",
+_DPB as a reference."
 \end_layout
 
 \begin_layout Plain Layout
 
-           "Measured pressures in the cavities of the dew-point sensors,
- plotted with the ambient pressure (PSXC) for reference.",
+RPlot5Capc <- "Measured pressures in the cavities of the dew-point sensors,
+ plotted with the ambient pressure (PSXC) for reference."
 \end_layout
 
 \begin_layout Plain Layout
 
-            "History of measurements of water vapor pressure [hPa], mixing
- ratio [g/kg], and relative humidity.")
+RPlot5Capd <- "History of measurements of water vapor pressure [hPa], mixing
+ ratio [g/kg], and relative humidity."
 \end_layout
 
 \begin_layout Plain Layout
@@ -1744,13 +1744,21 @@ RPlot20Cap <- "Size distributions measured by the CDP, each plot representing
 
 \begin_layout Plain Layout
 
-RPlot21Cap <- "Surface temperature measured radiometrically (RSTB) [deg.C]"
+RPlot21Cap <- "Surface temperature measured radiometrically (RSTB) [deg.C]
+ (top panel) and infrared irradiance measured by the down-looking (IRBC)
+ and upward-looking (IRTC) radiometers [W/m$^2$]"
 \end_layout
 
 \begin_layout Plain Layout
 
 RPlot22Cap <- "Size distributions measured by the UHSAS, each plot representing
  1-s of measurements."
+\end_layout
+
+\begin_layout Plain Layout
+
+RPlot30Cap <- c("Uncorrected CO concentration, CORAW [ppbv] and ozone concentrat
+ion FO3 [ppbv].", "Inlet pressure of the Aerolaser CO instrument [torr].")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1798,15 +1806,6 @@ if (testPlot(1)) {
 \begin_layout Plain Layout
 
 }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-<<plot-2>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -2010,7 +2009,7 @@ C; claimed uncertainty is about 0.3
 \end_inset
 
 C.
- In particular, ATHR1 and ATHR2 should agree to within about 0.3
+ ATH1, ATH2 and ATF1 should agree to within about 0.3
 \begin_inset Formula $^{\circ}$
 \end_inset
 
@@ -2023,8 +2022,12 @@ C.
  about 2 C.
  It appears mostly because that measurement has slow response, either from
  filtering or delays or both, and this usually accounts for the errors.
- It is common to see two lines on the AT_A-vs-ATHL2 plot for the same reason;
- one is from measurements during climb and the other from those during descent.
+ Differences in response times also leads to differences between ATF1 and
+ ATH2 during climbs and descents, as is evident on the right side of the
+ plot in the lower left panel.
+ It is common to see two lines on the AT_A-vs-ATH2 or ATF1-vs-ATH2 plot
+ for the same reason; one is from measurements during climb and the other
+ from those during descent.
  For this flight, AT_A is higher than ATH1 or ATH2 when the temperature
  is lower than about -20
 \begin_inset Formula $^{\circ}$
@@ -2067,7 +2070,8 @@ status open
 
 \begin_layout Plain Layout
 
-<<humidity, fig.cap=RPlot5Cap, fig.height=5.1>>=
+<<humidity, fig.cap=c(RPlot5Capa, RPlot5Capb, RPlot5Capc, RPlot5Capd), fig.height=
+5.1>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -2081,12 +2085,12 @@ if (testPlot (5)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot5.R")
+  source("PlotFunctions/RPlot5.R")
 \end_layout
 
 \begin_layout Plain Layout
 
-  RPlot5 (DataV)}
+  RPlot5 (DataV)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2252,7 +2256,7 @@ if (testPlot (6)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot6.R")
+  source("PlotFunctions/RPlot6.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2344,7 +2348,7 @@ if (testPlot (7)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot7.R")
+  source("PlotFunctions/RPlot7.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2460,7 +2464,7 @@ if (testPlot (8)) {
 
 \begin_layout Plain Layout
 
-  source ("PlotFiles/RPlot8.R")
+  source ("PlotFunctions/RPlot8.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2544,7 +2548,7 @@ if (testPlot (9)) {
 
 \begin_layout Plain Layout
 
-  source ("PlotFiles/RPlot9.R")
+  source ("PlotFunctions/RPlot9.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2653,7 +2657,7 @@ if (testPlot (10)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot10.R")
+  source("PlotFunctions/RPlot10.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2749,7 +2753,7 @@ if (testPlot (11)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot11.R")
+  source("PlotFunctions/RPlot11.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2851,7 +2855,7 @@ if (testPlot (12)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot12.R")
+  source("PlotFunctions/RPlot12.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2973,7 +2977,7 @@ if (testPlot (13)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot13.R")
+  source("PlotFunctions/RPlot13.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -3058,7 +3062,7 @@ h would integrate (if always of the same sign) to an error in altitude of
 \end_layout
 
 \begin_layout Paragraph
-CN, PCASP, FSSP, CDP, FSSP300 concentrations
+CN, UHSAS, CDP, and 2DC concentrations
 \end_layout
 
 \begin_layout Standard
@@ -3081,7 +3085,7 @@ if (testPlot (15)) {
 
 \begin_layout Plain Layout
 
-  source ("PlotFiles/RPlot15.R")
+  source ("PlotFunctions/RPlot15.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -3219,7 +3223,7 @@ if (testPlot (16)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFiles/RPlot16.R")
+  source("PlotFunctions/RPlot16.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -3255,7 +3259,7 @@ status open
 
 
 \backslash
-fig:dbar-plwc1
+ref{fig:dbar-plwc1}
 \end_layout
 
 \end_inset
@@ -3319,48 +3323,20 @@ ref{fig:dbar-plwc2}
 \end_inset
 
 .
- In the plotted case, there is too little liquid water content to conclude
- much except that the measurements properly show very small values, with
- a suspicious offset in the variable PLWCC that may indicate poor removal
- of the zero value resulting from concentrations above the threshold CDP
- concentration for calculating the offset.
- For a case like this, it is worth checking on the offset in use for the
- King probe zero adjustment.
- The middle panel in this figure shows the power used by the King probe.
- This should remain steady during the project unless probe elements are
- changed.
- The guidelines on this plot can help detect departures from normal operation.
- Finally, the bottom panel shows the liquid water content deduced from the
- 2DC probe.
- Here it is appropriately quiet outside a few brief passes through cloud
- elements.
-\end_layout
-
-\begin_layout Standard
-For monitoring purposes, Fig.
+ The regions with liquid water content from the CDP (PLWCD) are reasonably
+ consistent in location and magnitude with the liquid water content from
+ the King probe (PLWCC), except in some cases where altitude changes caused
+ excursions on PLWCC not present in PLWCD.
+ The power from the King probe is shown in the middle panel, as PLWC; this
+ is normally in the range from 10--15
 \begin_inset space ~
 \end_inset
 
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{fig:dbar-plwc3}
-\end_layout
-
-\end_inset
-
- shows some measurements characterizing the operation of the FSSP.
- The instrument rejects droplets for two reasons, either because it estimates
- they are outside the depth of field or because their transit time is shorter
- than the average and can indicate passage through the edges of the beam.
- The displayed results are too noisy and the probe was apparently not working
- properly, so better examples may be obtained from the WINTER test flights
- and this section will be updated then.
+watts except when encounters with liquid water require more power to maintain
+ the constant temperature of the sensing wire.
+ The bottom panel shows the liquid water content from the 2DC probe, which
+ measured only very small amounts on this flight but may be higher in cases
+ with well-developed warm rain.
 \end_layout
 
 \begin_layout Paragraph
@@ -3378,7 +3354,30 @@ status open
 
 \begin_layout Plain Layout
 
-if (testPlot (17)) {RPlot17 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (17)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot17.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot17 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3421,8 +3420,10 @@ ref{fig:skewt-all}
 n, that searches for climbs and descents and constructs separate plots for
  them.
  Include 18 in the sequence named 'nplots' to see these individual plots.
- They are suppressed in this memo.
- 
+ They are suppressed in this memo and the standard plots for CSET.
+ There is a separate document that describes this skew-T diagram, which
+ is based on the Davies-Jones values for pseudo-adiabatic equivalent potential
+ temperature and on the Murphy-Koop formula for water vapor pressure.
 \end_layout
 
 \begin_layout Standard
@@ -3431,12 +3432,35 @@ status open
 
 \begin_layout Plain Layout
 
-<<skewt-climb-descent, fig.cap=RPlot18Cap>>=
+<<skewt-climb-descent, fig.cap=RPlot18Cap, eval=FALSE>>=
 \end_layout
 
 \begin_layout Plain Layout
 
-if (testPlot (18)) {RPlot18 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (18)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source ("PlotFunctions/RPlot18.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot18 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3450,7 +3474,7 @@ if (testPlot (18)) {RPlot18 (DataV)}
 \end_layout
 
 \begin_layout Paragraph
-Potential temperature profiles
+Potential temperature histories and profiles
 \end_layout
 
 \begin_layout Standard
@@ -3464,7 +3488,30 @@ status open
 
 \begin_layout Plain Layout
 
-if (testPlot (19)) {RPlot19 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (19)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot19.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot19 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3513,16 +3560,63 @@ ref{fig:potential-temperatures2}
  The latter can be useful because it is expected that potential temperature
  (THETA or THETAV) will normally decrease or remain steady as the altitude
  increases, and uniform regions indicate possible well-mixed regions such
- as the Earth's boundary layer, often capped by modest stability reflected
- in increasing THETA.
- These profiles often will show multiple lines because all individual measuremen
-ts are plotted in connected lines, so for example there may be one plot
- for ascent and one for descent.
+ as in the Earth's boundary layer, often capped by modest stability reflected
+ in increasing THETA.Virtual potential temperature (THETAV) exceeds potential
+ temperature (THETA) by an amount that increases with the water vapor mixing
+ ratio, so plots normally look like Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:potential-temperatures1}
+\end_layout
+
+\end_inset
+
+ with large differences at low level but small differences at upper levels.
+ The values THETAE and THETAP are different values of the pseudo-adiabatic
+ equivalent potential temperature, based respectively on the Bolton and
+ Davies-Jones equations, and THETAQ represents the wet-equivalent potential
+ temperature that would characterize true reversible ascent of descent.
+ Where measurements of humidity are invalid or set missing, there will be
+ gaps such as that appearing after 22:00 in this plot.
+ The profiles often will show multiple lines because all individual measurements
+ are plotted in connected lines, so for example there may be one plot for
+ ascent and one for descent.
  Much more can be deduced by using profiles like these, but for the purposes
  of data review the best test is to expect plots resembling these and investigat
 e departures.
- For example, in these plots there are right-ward excursions near 800 hPa
- that originate from overheating of the dew-point sensors.
+ In Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:potential-temperatures2}
+\end_layout
+
+\end_inset
+
+, right side, the fluctuations in THETAP or THETAE with height in the range
+ from about 800--700
+\begin_inset space ~
+\end_inset
+
+hPa reflect fluctuations from passage into and back out of clouds during
+ descents through these regions.
  Features like these should be investigated if they haven't been understood
  from the preceding plots.
 \end_layout
@@ -3542,7 +3636,30 @@ status open
 
 \begin_layout Plain Layout
 
-if (testPlot (20)) {RPlot20 (DataV)}
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (20)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot20.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot20 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3556,8 +3673,8 @@ if (testPlot (20)) {RPlot20 (DataV)}
 \end_layout
 
 \begin_layout Standard
-Size distributions measured by the CDP and SPP100 (FSSP) are shown in the
- next set of plots beginning with Fig.
+Size distributions measured by the CDP are shown in the next set of plots
+ beginning with Fig.
 \begin_inset space ~
 \end_inset
 
@@ -3583,8 +3700,9 @@ ref{fig:droplet-size-distributions1}
 
 .
  Once three pages of plots are generated, the plotting is suppressed, so
- this only provides an initial limited sample.
- 
+ this only provides an initial limited sample, but it can be a useful indicator
+ of acceptable CDP performance if the size distributions resemble those
+ shown in this example.
 \end_layout
 
 \begin_layout Standard
@@ -3593,7 +3711,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<speed-run-search, eval=FALSE>>=
+<<radiometer-measurements, fig.cap=RPlot21Cap>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -3602,22 +3720,17 @@ status open
 
 \begin_layout Plain Layout
 
-SpeedRunSearch (DataV)
+if (testPlot (21)) {
 \end_layout
 
 \begin_layout Plain Layout
 
-if (SavePlotsToFiles) {
+  source("PlotFunctions/RPlot21.R")
 \end_layout
 
 \begin_layout Plain Layout
 
-dev.off()
-\end_layout
-
-\begin_layout Plain Layout
-
-system (sprintf ("evince %s", plotfile))
+  RPlot21 (DataV)
 \end_layout
 
 \begin_layout Plain Layout
@@ -3637,6 +3750,225 @@ system (sprintf ("evince %s", plotfile))
 \end_inset
 
 
+\end_layout
+
+\begin_layout Paragraph
+Radiometric measurements
+\end_layout
+
+\begin_layout Standard
+The next plot, Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:radiometer-measurements}
+\end_layout
+
+\end_inset
+
+, shows the measured Earth-surface temperature (RSTB) and the infrared irradianc
+es for down-welling (IRTC) and up-welling (IRBC) radiation.
+ There will usually be reasonable correlation between RSTB and IRBC, and
+ IRTC will usually drop to low values (<100) for flight at altitudes above
+ FL300 unless there are thick Cirrus clouds above that altitude.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<aerosol-size-distributions, fig.cap=RPlot22Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (22)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot22.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot22 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Aerosol size distributions
+\end_layout
+
+\begin_layout Standard
+Size distributions measured by the UHSAS are shown in a set of figures beginning
+ with Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:aerosol-size-distributions}
+\end_layout
+
+\end_inset
+
+.
+ These plots are only generated when some channel in the UHSAS has a concentrati
+on exceeding 50
+\backslash
+,cm
+\begin_inset Formula $^{-3}$
+\end_inset
+
+, and once 24 size distributions are plotted further plots are suppressed
+ so these plots only show a snapshot of UHSAS performance.
+ Review.R can be run with a specified time range to see other portions of
+ the flight for these and other plots.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<chemistry-plots, fig.cap=RPlot30Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (30)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source("PlotFunctions/RPlot30.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot30 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Air-chemistry measurements
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:chemistry-plots1}
+\end_layout
+
+\end_inset
+
+ shows the history of measurements of CO and O
+\begin_inset Formula $_{3}$
+\end_inset
+
+ [ppbv], and Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:chemistry-plots2}
+\end_layout
+
+\end_inset
+
+ displays the inlet pressure of the Aerolaser CO instrument [units are torr,
+ equal to about 1.333
+\begin_inset space ~
+\end_inset
+
+hPa].
+\end_layout
+
+\begin_layout Paragraph
+Search for maneuvers
+\end_layout
+
+\begin_layout Standard
+At the end of the Review.R script there are code segments that do simple
+ searches for candidate time for various maneuvers, including circles, speed
+ runs, pitch maneuvers, yaw maneuvers, and reverse-heading maneuvers.
+ These may be useful when compiling lists of maneuvers for the project.
+ There were no candidates identified for this flight.
 \end_layout
 
 \begin_layout Section
@@ -3708,13 +4040,12 @@ RPlotN <- function(data) {
 
 \begin_layout Enumerate
 Change N in the name RPlotN to some number not in use.
- The present version uses 1--20, so a good choice might be to use 100; i.e.,
- RPlotN should be replaced by RPlot100 or some other number that it is unlikely
- anyone else will use.
+ The present version uses 1--22 and 30, so a good choice might be to use
+ 31; i.e., RPlotN should be replaced by RPlot31.
 \end_layout
 
 \begin_layout Enumerate
-Make sure that the needed variables are in 
+Make sure that any needed variables are in 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3727,8 +4058,8 @@ VarList
  follow that statement (immediately below) with this statement: VarList
  <- c(VarList, "Var1", "Var2") where Var1 and Var2 are replaced by the names
  of variables you want to use.
- They must be in the netCDF file or else this program will crash; it is
- not protected against this error.
+ They must be in the netCDF file or else this program will stop; it is not
+ protected against this error.
 \end_layout
 
 \begin_layout Enumerate
@@ -3748,7 +4079,21 @@ status open
 
 \begin_layout Plain Layout
 
-RPlot100 (DataV)   # change '100' to whatever number you have used
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot(31)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  source ("PlotFunctions/RPlot31.R")
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot31 (DataV)   # change '31' to whatever number you have used
 \end_layout
 
 \begin_layout Plain Layout
@@ -3764,7 +4109,7 @@ RPlot100 (DataV)   # change '100' to whatever number you have used
 \begin_layout Enumerate
 You can then make additional modifications to the function as you see the
  results and want to change them.
- Use the functions RPlot[1:20] in Review.R for ideas of ways to tailor the
+ Use the functions RPlot[1:22] in Review.R for ideas of ways to tailor the
  plots.
  Also, there are some functions available that you may find useful:
 \end_layout
@@ -3824,7 +4169,7 @@ Project:
 \begin_inset Text
 
 \begin_layout Plain Layout
-WINTER
+CSET
 \end_layout
 
 \end_inset
@@ -3933,7 +4278,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://github.com/WilliamCooper/WINTER.git
+https://github.com/WilliamCooper/CSET.git
 \end_layout
 
 \end_inset

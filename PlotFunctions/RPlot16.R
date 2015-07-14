@@ -38,5 +38,16 @@ RPlot16 <- function (data) {
   plotWAC (DF, ylim=c(0,1))
   title ("1-min filter", cex.main=0.75)
   AddFooter ()
+  
+  # CDP housekeeping
+  op <- par (mar=c(2,4,1,1)+0.1,oma=c(1.1,0,0,0))
+  data$DOFACC <- data$TCNTD_LWOI / (data$TCNTD_LWOI + data$REJDOF_LWOI)
+  data$DOFACC <- SmoothInterp (data$DOFACC)
+  plotWAC (data[, c("Time", "DOFACC")], ylab="DOF acceptance fraction")
+  hline (0.2, 'red')
+  data$AVT <- SmoothInterp (data$AVGTRNS_LWOI)
+  plotWAC (data[, c("Time", "AVT")], ylim=c(0, 2))
+  op <- par (mar=c(5,4,1,1)+0.1)
+  plotWAC (data[, c("Time", "CDPLSRP_LWOI")], ylab="CDP laser power", ylim=c(0,4))
 }
 
