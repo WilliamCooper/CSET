@@ -4,10 +4,10 @@ RPlot19 <- function (data) {
   layout(matrix(1:2, ncol = 1), widths = 1, heights = c(5,6))
   op <- par (mar=c(2,4,1,1)+0.1,oma=c(1.1,0,0,0))
   plotWAC (data[, c("Time", "THETA", "THETAV")], ylab="potential temperatures",
-           legend.position = "topright")
+           legend.position = "top")
   op <- par (mar=c(5,4,1,1)+0.1)
   plotWAC (data[, c("Time", "THETAE", "THETAP", "THETAQ")], 
-           ylab="ad. pot. temperatures", legend.position = "topright")
+           ylab="ad. pot. temperatures", legend.position = "top")
   AddFooter ()
   # plots vs pressure:
   layout(matrix(2:1, ncol = 2), widths = c(5,5), heights = 1)

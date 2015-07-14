@@ -27,7 +27,7 @@ setwd (sprintf ("~/RStudio/%s", Project))
 ## For example, 'Rscript Review.R rf03 17 0 220000 230000' displays plot 17 for
 ## the listed times on an Xwindows screen.
 ##  Possible way to include this in a batch script?
-##  cd ~/RStudio/WINTER; Rscript Review.R rf01 -1
+##  cd ~/RStudio/CSET; Rscript Review.R rf01 -1
 run.args <- commandArgs (TRUE)
 
 ## ----configuration, include=TRUE-----------------------------------------
@@ -49,8 +49,8 @@ Flight <- "tf01"
 print(sprintf("Project is %s", Project))
 ## find max rf in data directory, use as default if none supplied via command line:
 Fl <- sort (list.files (sprintf ("%s%s/", DataDirectory (), Project), 
-                        sprintf ("%srf...nc", Project)), decreasing = TRUE)[1]
-Flight <- sub (Project, '',  sub (".nc", '', Fl))
+                        sprintf ("%s_rf...nc", Project)), decreasing = TRUE)[1]
+Flight <- sub (Project, '',  sub (".nc", '', Fl)); Flight <- sub ('_', '', Flight)
 
 if (length (run.args) > 0) {
   Flight <- run.args[1]
@@ -83,7 +83,7 @@ if (length(run.args) > 3) {
 }
 
 ### get data
-fname = sprintf("%s%s/%s%s.nc", DataDirectory (), Project, Project, Flight)
+fname = sprintf("%s%s/%s_%s.nc", DataDirectory (), Project, Project, Flight)
 print (sprintf ("processing %s", fname))
 # VarList must include all variable names that are used in this routine
 ## VarList is a file that contains all the variables needed. It loads
@@ -91,7 +91,7 @@ print (sprintf ("processing %s", fname))
 source("./VarList")
 Data <- getNetCDF (fname, VarList)
 
-# data: select only points where TASX > 130, and optionally limit time range
+# data: select only points where TASX > 110, and optionally limit time range
 DataV <- Data[setRange(Data$Time, StartTime, EndTime), ]
 DataV <- DataV[(!is.na (DataV$TASX)) & (DataV$TASX > 110), ]
 ## omit points where the Time is NA
@@ -220,7 +220,7 @@ for (np in 3:nps) {
     }
   }
 }
-print('done plotting')
+print('plots generated')
 ## ----manuever-search-----------------------------------------------------
 
 PitchSearch (DataV)

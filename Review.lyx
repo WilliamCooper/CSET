@@ -609,7 +609,7 @@ status open
 
 \begin_layout Plain Layout
 
-fname = sprintf("%s%s/%s%s.nc", DataDirectory (), Project, Project, Flight)
+fname = sprintf("%s%s/%s_%s.nc", DataDirectory (), Project, Project, Flight)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1368,6 +1368,49 @@ liquid water content
 \end_layout
 
 \begin_layout Quotation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CDP housekeeping
+\end_layout
+
+\begin_layout Quotation
 RPlot17: all-flight Skew-T
 \end_layout
 
@@ -1589,20 +1632,25 @@ _DPB as a reference."
 
 \begin_layout Plain Layout
 
-RPlot5Capc <- "Measured pressures in the cavities of the dew-point sensors,
- plotted with the ambient pressure (PSXC) for reference."
+RPlot5Capc <- "Pressures in the cavities of the dew-point sensors, plotted
+ with the ambient pressure (PSXC) for reference."
 \end_layout
 
 \begin_layout Plain Layout
 
-RPlot5Capd <- "History of measurements of water vapor pressure [hPa], mixing
- ratio [g/kg], and relative humidity."
+RPlot5Capd <- "Measurements of water vapor pressure, mixing ratio and relative
+ humidity."
 \end_layout
 
 \begin_layout Plain Layout
 
 RPlot6Cap <- "History of available pressure measurements, both uncorrected
- (top) and after application of the LAMS-derived pressure corrections (bottom)."
+ (PSF) and after application of the LAMS-derived pressure corrections (PSFC).
+ The avionics-system pressure PS
+\backslash
+
+\backslash
+_A is also shown."
 \end_layout
 
 \begin_layout Plain Layout
@@ -1637,8 +1685,8 @@ RPlot9Cap <- c("History of wind measurements, horizontal (WDC/WSC) and vertical
 
 \begin_layout Plain Layout
 
-"Westerly and northerly components of the horizontal wind [m/s], as shown
- in the previous plot in terms of direction and speed.")
+"Westerly and northerly components of the horizontal wind, as shown in the
+ previous plot in terms of direction and speed.")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1691,10 +1739,26 @@ RPlot14Cap <- "UHSAS"
 
 \begin_layout Plain Layout
 
-RPlot15Cap <- "Particle concentrations from the CN counter and PCASP aerosol
- distrometer (top, [cm$^{-3}$) and hydrometeor concentrations from the CDP,
- SPP100, FSSP300, and 2DC (bottom, [cm$^{-3}$] exc.
- 2DC [liter${^-1}$], bottom)." 
+RPlot15Cap <- c("(top) Particle concentrations from the CN counter, UHSAS
+ (all and larger than 100
+\backslash
+
+\backslash
+,nm) and PCASP aerosol distrometer if available, and (bottom) hydrometeor
+ concentrations from the CDP and 2DC with 2DC  shown in units of liter${^{-1}}$."
+,
+\end_layout
+
+\begin_layout Plain Layout
+
+                 "Housekeeping measurements useful for monitoring the status
+ of the particle-measuring instruments.
+ (top) USMPFLW and USHF, respectively the flow and sheath flow in the UHSAS;
+ FCNC and XICNC, respectively the sample flow and isokinetic side-flow in
+ the CN counter, and (if present) PFLWC, the flow in the PCASP.
+ (bottom) UREF, monitoring the laser voltage in the UHSAS, and USCAT, measuring
+ the background scatter in the UHSAS.
+ If the PCASP is present, PREF monitors its voltage.")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1703,13 +1767,13 @@ RPlot16Cap <- c("Mean diameters [$
 \backslash
 
 \backslash
-mu$m] measured by the CDP and FSSP (top), the FSSP300 and PCASP (middle),
- and 2DC [bottom].", "Measurements of liquid water content from the SPP100,
- CDP, and King probe (top); the power required to maintain King-probe temperatur
-e (middle), and the extimated liquid water content from the 2DC probe with
+mu$m] measured by the CDP (top), the UHSAS (and PCASP if available) (middle),
+ and 2DC [bottom].", "Measurements of liquid water content from the CDP and
+ King probe (top); the power required to maintain King-probe temperature
+ (middle), and the estimated liquid water content from the 2DC probe with
  the assumption that all particles are liquid.", "Additional characteristics
- of the FSSP: percentage of DOF-accepted particles (top), percentage of
- TOF-accepted particles (middle), and the laser power (bottom).")
+ of the CDP: percentage of DOF-accepted particles (top), average transit
+ time (middle), and the laser power (bottom).")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1717,7 +1781,7 @@ e (middle), and the extimated liquid water content from the 2DC probe with
 RPlot17Cap <- "Plot of all temperature and pressure measurements, averaged
  in 5 hPa intervals, for the flight.
  The only restriction on data is that only measurements where TASX exceeded
- 60 m/s were used."
+ 110 m/s were used."
 \end_layout
 
 \begin_layout Plain Layout
@@ -1757,8 +1821,10 @@ RPlot22Cap <- "Size distributions measured by the UHSAS, each plot representing
 
 \begin_layout Plain Layout
 
-RPlot30Cap <- c("Uncorrected CO concentration, CORAW [ppbv] and ozone concentrat
-ion FO3 [ppbv].", "Inlet pressure of the Aerolaser CO instrument [torr].")
+RPlot30Cap <- c("Uncorrected CO concentration CORAW and ozone concentration
+ FO3.", "Inlet pressure of the Aerolaser CO instrument, and the flow through
+ that instrument (here missing because there were no valid values for this
+ variable).")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1768,6 +1834,72 @@ ion FO3 [ppbv].", "Inlet pressure of the Aerolaser CO instrument [torr].")
 \begin_layout Plain Layout
 
 @
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<load-plot-functions, include=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for (np in 1:nps) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (file.exists (sprintf ("./PlotFunctions/RPlot%d.R", np))) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (testPlot(np)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      # print(paste('Plot',np))
+\end_layout
+
+\begin_layout Plain Layout
+
+      eval(parse(text=sprintf("source(
+\backslash
+"PlotFunctions/RPlot%d.R
+\backslash
+")", np)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1795,11 +1927,6 @@ if (testPlot(1)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot1.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot1 (Data, Flight)
 \end_layout
 
@@ -1815,11 +1942,6 @@ if (testPlot(1)) {
 \begin_layout Plain Layout
 
 if (testPlot(2)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot3.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1921,15 +2043,6 @@ for (np in 3:4) {
 \begin_layout Plain Layout
 
       # print(paste('Plot',np))
-\end_layout
-
-\begin_layout Plain Layout
-
-      eval(parse(text=sprintf("source(
-\backslash
-"PlotFunctions/RPlot%d.R
-\backslash
-")", np)))
 \end_layout
 
 \begin_layout Plain Layout
@@ -2081,11 +2194,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (5)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot5.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2256,11 +2364,6 @@ if (testPlot (6)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot6.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot6 (DataV)
 \end_layout
 
@@ -2344,11 +2447,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (7)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot7.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2464,11 +2562,6 @@ if (testPlot (8)) {
 
 \begin_layout Plain Layout
 
-  source ("PlotFunctions/RPlot8.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot8 (DataV)
 \end_layout
 
@@ -2544,11 +2637,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (9)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source ("PlotFunctions/RPlot9.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2657,11 +2745,6 @@ if (testPlot (10)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot10.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot10 (DataV)
 \end_layout
 
@@ -2749,11 +2832,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (11)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot11.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2851,11 +2929,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (12)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot12.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -2977,11 +3050,6 @@ if (testPlot (13)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot13.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot13 (DataV)
 \end_layout
 
@@ -3081,11 +3149,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (15)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source ("PlotFunctions/RPlot15.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -3223,11 +3286,6 @@ if (testPlot (16)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot16.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot16 (DataV)
 \end_layout
 
@@ -3339,6 +3397,28 @@ watts except when encounters with liquid water require more power to maintain
  with well-developed warm rain.
 \end_layout
 
+\begin_layout Standard
+In addition, some housekeeping information is shown in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:dbar-plwc3}
+\end_layout
+
+\end_inset
+
+, including the DOF acceptance ratio (typically about 0.2), the average transit
+ time AVT and the CDP laser power, typically above 3.
+\end_layout
+
 \begin_layout Paragraph
 Plots on a thermodynamic (skew-T) diagram
 \end_layout
@@ -3363,12 +3443,7 @@ if (testPlot (17)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot17.R")
-\end_layout
-
-\begin_layout Plain Layout
-
-  RPlot17 (DataV)
+  suppressWarnings (RPlot17 (DataV))
 \end_layout
 
 \begin_layout Plain Layout
@@ -3446,12 +3521,7 @@ if (testPlot (18)) {
 
 \begin_layout Plain Layout
 
-  source ("PlotFunctions/RPlot18.R")
-\end_layout
-
-\begin_layout Plain Layout
-
-  RPlot18 (DataV)
+  suppressWarnings (RPlot18 (DataV))
 \end_layout
 
 \begin_layout Plain Layout
@@ -3493,11 +3563,6 @@ status open
 \begin_layout Plain Layout
 
 if (testPlot (19)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot19.R")
 \end_layout
 
 \begin_layout Plain Layout
@@ -3645,11 +3710,6 @@ if (testPlot (20)) {
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot20.R")
-\end_layout
-
-\begin_layout Plain Layout
-
   RPlot20 (DataV)
 \end_layout
 
@@ -3705,53 +3765,6 @@ ref{fig:droplet-size-distributions1}
  shown in this example.
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<radiometer-measurements, fig.cap=RPlot21Cap>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-if (testPlot (21)) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  source("PlotFunctions/RPlot21.R")
-\end_layout
-
-\begin_layout Plain Layout
-
-  RPlot21 (DataV)
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Paragraph
 Radiometric measurements
 \end_layout
@@ -3787,7 +3800,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<aerosol-size-distributions, fig.cap=RPlot22Cap>>=
+<<radiometer-measurements, fig.cap=RPlot21Cap>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -3796,17 +3809,12 @@ status open
 
 \begin_layout Plain Layout
 
-if (testPlot (22)) {
+if (testPlot (21)) {
 \end_layout
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot22.R")
-\end_layout
-
-\begin_layout Plain Layout
-
-  RPlot22 (DataV)
+  RPlot21 (DataV)
 \end_layout
 
 \begin_layout Plain Layout
@@ -3846,7 +3854,7 @@ status open
 
 
 \backslash
-ref{fig:aerosol-size-distributions}
+ref{fig:aerosol-size-distributions1}
 \end_layout
 
 \end_inset
@@ -3854,8 +3862,10 @@ ref{fig:aerosol-size-distributions}
 .
  These plots are only generated when some channel in the UHSAS has a concentrati
 on exceeding 50
-\backslash
-,cm
+\begin_inset space \thinspace{}
+\end_inset
+
+cm
 \begin_inset Formula $^{-3}$
 \end_inset
 
@@ -3871,7 +3881,7 @@ status open
 
 \begin_layout Plain Layout
 
-<<chemistry-plots, fig.cap=RPlot30Cap>>=
+<<aerosol-size-distributions, fig.cap=RPlot22Cap>>=
 \end_layout
 
 \begin_layout Plain Layout
@@ -3880,17 +3890,12 @@ status open
 
 \begin_layout Plain Layout
 
-if (testPlot (30)) {
+if (testPlot (22)) {
 \end_layout
 
 \begin_layout Plain Layout
 
-  source("PlotFunctions/RPlot30.R")
-\end_layout
-
-\begin_layout Plain Layout
-
-  RPlot30 (DataV)
+  RPlot22 (DataV)
 \end_layout
 
 \begin_layout Plain Layout
@@ -3957,6 +3962,52 @@ ref{fig:chemistry-plots2}
 \end_inset
 
 hPa].
+ The last plot should also show the flow in the Aerolaser CO instrument,
+ but for this flight and many of those preceding it all those values have
+ been missing or not showing reasonable values, so this is left in the routine
+ in case that problem is fixed in later flights.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<chemistry-plots, fig.cap=RPlot30Cap>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (testPlot (30)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  RPlot30 (DataV)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -3980,7 +4031,8 @@ Here is the procedure for adding a plot to this routine:
 \end_layout
 
 \begin_layout Enumerate
-Copy this code and insert it at the end of Review.R:
+Copy this code and insert it in the PlotFunctions directory with a name
+ like RPlot31.R:
 \begin_inset Newline newline
 \end_inset
 
@@ -3991,6 +4043,10 @@ status open
 \begin_layout Plain Layout
 
 <<model-addition, echo=TRUE, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4020,12 +4076,16 @@ RPlotN <- function(data) {
 
 \begin_layout Plain Layout
 
-  plotWAC (data[, c("Time", "Var1", "Var2"), ylab="Var"]  
+  plotWAC (data[, c("Time", "Var1", "Var2"), ylab="Var"])
 \end_layout
 
 \begin_layout Plain Layout
 
 }
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4094,6 +4154,15 @@ if (testPlot(31)) {
 \begin_layout Plain Layout
 
   RPlot31 (DataV)   # change '31' to whatever number you have used
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout

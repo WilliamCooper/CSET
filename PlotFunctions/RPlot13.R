@@ -6,12 +6,12 @@ RPlot13 <- function (data) {
   DF <- data[, c("Time", "ACINS", "ACINS_IRS2")]
   plotWAC (DF, ylab="ACINS")
   title (sprintf ("mean vertical acceleration: %.3f", mean (data$ACINS, na.rm=TRUE)))
-  plotWAC (data[, c("Time", "VSPD", "VSPD_A", "GGVSPD")])
+  plotWAC (data[, c("Time", "VSPD", "VSPD_A", "GGVSPD")], legend.position='topright')
   title (sprintf ("mean vertical velocity: %.3f (IRS) and %.3f (GPS)",
                   mean (data$VSPD, na.rm=TRUE), mean (data$GGVSPD, na.rm=TRUE)))
   op <- par (mar=c(5,4,1,1)+0.1)
   plotWAC (data[, c("Time", "GGALT", "ALT_A", "ALT_A2")],
-           legend.position = "topright")
+           legend.position = "top")
   AddFooter ()
 }
 

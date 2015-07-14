@@ -40,7 +40,8 @@ RPlot16 <- function (data) {
   AddFooter ()
   
   # CDP housekeeping
-  op <- par (mar=c(2,4,1,1)+0.1,oma=c(1.1,0,0,0))
+  layout(matrix(1:3, ncol = 1), widths = 1, heights = c(5,5,6))
+  op <- par (mar=c(2,4,1,1)+0.1)
   data$DOFACC <- data$TCNTD_LWOI / (data$TCNTD_LWOI + data$REJDOF_LWOI)
   data$DOFACC <- SmoothInterp (data$DOFACC)
   plotWAC (data[, c("Time", "DOFACC")], ylab="DOF acceptance fraction")
@@ -49,5 +50,6 @@ RPlot16 <- function (data) {
   plotWAC (data[, c("Time", "AVT")], ylim=c(0, 2))
   op <- par (mar=c(5,4,1,1)+0.1)
   plotWAC (data[, c("Time", "CDPLSRP_LWOI")], ylab="CDP laser power", ylim=c(0,4))
+  AddFooter ()
 }
 

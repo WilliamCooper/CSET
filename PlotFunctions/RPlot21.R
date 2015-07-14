@@ -9,6 +9,6 @@ RPlot21 <- function(data) {
   op <- par (mar=c(2,4,1,1)+0.1,oma=c(1.1,0,0,0))
   plotWAC (data[, c("Time", "RSTB")])
   op <- par (mar=c(5,4,1,1)+0.1)
-  plotWAC (data[, c("Time", "IRBC", "IRTC")])
+  plotWAC (data[, c("Time", "IRBC", "IRTC")], ylab="IRxC", legend.position='bottom')
   AddFooter ()
 }

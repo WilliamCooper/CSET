@@ -1,7 +1,7 @@
 ### plot 6: ambient pressures
 RPlot6 <- function (data) { 
   ## needs PSF, PSFC, PS_A
-  op <- par (mar=c(5,4,1,2)+0.1)
+  op <- par (mar=c(5,4,1,2)+0.1, oma=c(1.1,0,0,0))
   layout(matrix(1:1, ncol = 1), widths = 1, heights = 5)
   plotWAC (DF <- data[, c("Time", "PSFC", "PS_A", "PSF")], 
            col=c('blue', 'skyblue', 'darkgreen'), ylab='pressure  PSy [hPa]')

@@ -19,24 +19,24 @@ RPlot9 <- function (data) {
   plotWAC (data[, c("Time", "WIC")], ylab="vertical wind WIC [m/s]",cex.axis=1.5,cex.lab=1.5)
   title (sprintf ("flight-average vertical wind: %.02f", 
                   mean (data$WIC, na.rm=TRUE)), cex.main=1.5)
-  hline (2); hline (-2)
+  hline (2); hline (-2); hline (0,'red')
   AddFooter ()
   op <- par (mar=c(2,4,1,1)+0.1)
   layout(matrix(1:2, ncol = 1), widths = 1, heights = c(5,6))
   DF <- data[, c("Time", "UXC")]
   DF$IUX <- data$IWS * sin (data$IWD*pi/180)
   # must recalculate this; UXC seems erroneous?
-  DF$UXC <- data$WSC * sin (data$WDC*pi/180)
+  DF$UIC <- data$WSC * sin (data$WDC*pi/180)
   plotWAC (DF, col=line.colors, lwd=line.widths, lty=line.types, 
            ylab="easterly wind [m/s]",legend.position=NA)
-  legend('bottomright',c("UXC", "IUX"),col=c("blue",tgreen),text.col=c("blue",tgreen),lty=c(1,3),lwd=c(1,1),cex=0.75)
+  legend('bottom',c("UIC", "IUX"),col=c("blue",tgreen),text.col=c("blue",tgreen),lty=c(1,3),lwd=c(1,1),cex=0.75)
   op <- par (mar=c(5,4,1,1)+0.1)
   DF <- data[, c("Time", "VYC")]
   DF$IVY <- -data$IWS * cos (data$IWD*pi/180)
-  DF$VYC <- -data$WSC * cos (data$WDC*pi/180)
+  DF$VIC <- -data$WSC * cos (data$WDC*pi/180)
   plotWAC (DF, col=line.colors, lwd=line.widths, lty=line.types, 
            ylab="southerly wind [m/s]",legend.position=NA)
-  legend('bottomright',c("VYC", "IVY"),col=c("blue",tgreen),text.col=c("blue",tgreen),lty=c(1,3),lwd=c(1,1),cex=0.75)
+  legend('bottom',c("VIC", "IVY"),col=c("blue",tgreen),text.col=c("blue",tgreen),lty=c(1,3),lwd=c(1,1),cex=0.75)
   AddFooter ()
 }
 
